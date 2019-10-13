@@ -1,0 +1,21 @@
+[user]
+        # These values are set in ~/.gitconfig_local
+
+[include]
+        path = ~/.gitconfig_local
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+
+[merge]
+	tool = vimdiff
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+[log]
+	decorate = auto

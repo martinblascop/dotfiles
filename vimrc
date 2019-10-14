@@ -1,16 +1,17 @@
 syntax on
-colorscheme papaya 
+filetype on
+colorscheme papaya
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/vimdiff.vim
 
-call plug#begin() 
+call plug#begin()
 
 Plug 'https://github.com/mattn/emmet-vim' "Autocomplete HTML
 Plug 'https://github.com/vim-airline/vim-airline' "Status line
 Plug 'https://github.com/tpope/vim-commentary' "Commentaries
 Plug 'https://github.com/tpope/vim-surround' " Surround plugin
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
-Plug 'https://github.com/jremmen/vim-ripgrep' 
+Plug 'https://github.com/jremmen/vim-ripgrep'
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'craigemery/vim-autotag'
 Plug 'junegunn/goyo.vim'
@@ -19,23 +20,24 @@ Plug 'https://github.com/wincent/command-t'
 Plug 'tpope/vim-fugitive'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 
-call plug#end() 
+call plug#end()
 
 "Setting variables
 set t_Co=256
 set history=1000
-set number 
+set number
 set relativenumber
-set cursorline 
+set cursorline
 set wrap
-set wildmenu   
-set ignorecase						
+set wildmenu
+set ignorecase
 set backspace=indent,eol,start
 set tags=./tags,./.tags,tags,.tags,
+set listchars=tab:▸\ ,eol:¬
 set ff=unix
 set mouse=a
-set hlsearch					
-set noswapfile 			       		
+set hlsearch
+set noswapfile
 set undofile
 set undodir=~/.vim/undovim
 set modifiable
@@ -51,7 +53,6 @@ inoremap jk <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
 nnoremap Y y$
-nnoremap K i<CR><Esc>_
 nnoremap <silent> <F1> :bp<CR>
 nnoremap <silent> <F2> :bn<CR>
 nnoremap <F4> :buffers<CR>:edit<Space>#
@@ -79,6 +80,8 @@ nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>q <C-W>q
 " nnoremap <Leader>f :FZF<CR>
 nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <LocalLeader>s :%s/\s\+$//e<CR>
+nnoremap <LocalLeader>l :set list!<CR>
 nnoremap <LocalLeader>f :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <LocalLeader>t :vertical terminal<CR>
 
@@ -99,8 +102,11 @@ let g:fzf_action = {
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
-autocmd BufWinLeave *.* mkview 
-autocmd BufWinEnter *.* silent loadview 
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 autocmd BufWinEnter *.* normal zR
 autocmd BufNewFile,BufRead log-*.php set filetype=txt
 autocmd BufNewFile,BufRead *.conf set filetype=sh
+autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
+autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
+autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4

@@ -4,6 +4,8 @@ colorscheme papaya
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/vimdiff.vim
 
+
+
 call plug#begin()
 
 Plug 'https://github.com/mattn/emmet-vim' "Autocomplete HTML
@@ -29,11 +31,13 @@ set number
 set relativenumber
 set cursorline
 set wrap
+set linebreak
 set wildmenu
 set ignorecase
 set backspace=indent,eol,start
 set tags=./tags,./.tags,tags,.tags,
 set listchars=tab:▸\ ,eol:¬
+set list
 set ff=unix
 set mouse=a
 set hlsearch
@@ -53,8 +57,8 @@ inoremap jk <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
 nnoremap Y y$
-nnoremap <silent> <F1> :bp<CR>
-nnoremap <silent> <F2> :bn<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 nnoremap <F4> :buffers<CR>:edit<Space>#
 cnoremap <C-a> <Home>
 nnoremap <Tab> <C-W>w
@@ -75,7 +79,13 @@ nnoremap <Leader><F4> :buffers<CR>:buffer<Space>
 nnoremap <Leader>l <C-^>
 nnoremap <Leader>- :sp <CR>
 nnoremap <Leader>\ :vsp <CR>
-nnoremap <Leader>g :Goyo<CR>
+nnoremap <Leader>go :Goyo<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gm :Git checkout master<CR>
+nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>q <C-W>q
 " nnoremap <Leader>f :FZF<CR>

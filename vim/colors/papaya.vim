@@ -40,7 +40,10 @@ function! SetHi256(group, ...)
     let theme_string .= 'ctermbg=' . a:2 . ' '
   endif
   if a:0 >= 3 && strlen(a:3)
-    let theme_string .= 'cterm=' . a:3
+    let theme_string .= 'cterm=' . a:3 . ' '
+  endif
+  if a:0 >= 4 && strlen(a:4)
+    let theme_string .= 'cterm=' . a:4
   endif
   execute theme_string
 endfunction
@@ -79,13 +82,13 @@ call SetHi256("Define", "137", "NONE", "NONE")
 
 call SetHiLink("Delimiter", "Function")
 
-call SetHi256("DiffAdd", "114", "35", "NONE")
+call SetHi256("DiffAdd", "108", "235", "bold", "reverse")
 
-call SetHi256("DiffChange", "52", "88", "underline")
+call SetHi256("DiffChange", "103", "235", "bold", "reverse")
 
-call SetHi256("DiffDelete", "NONE", "235", "underline")
+call SetHi256("DiffDelete", "131", "235", "bold", "reverse")
 
-call SetHi256("DiffText", "52", "131", "NONE")
+call SetHi256("DiffText", "208", "235", "reverse", "reverse")
 
 call SetHi256("Directory", "60", "NONE", "NONE")
 

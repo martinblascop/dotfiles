@@ -1,6 +1,9 @@
 # Use beam shape cursor
 echo -ne '\e[5 q'
 
+#disable ctrl-s
+stty -ixon
+
 
 # Set env variables
 export ZSH=$HOME/.zsh

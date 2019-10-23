@@ -2,7 +2,8 @@
 if &diff
 	map ] ]c
 	map [ [c
-	" hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
-	" hi DiffChange ctermbg=white  guibg=#ececec gui=none   cterm=none
-	" hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+	hi DiffAdd    cterm=bold cterm=reverse ctermfg=108 ctermbg=235
+	hi DiffChange cterm=bold cterm=reverse ctermfg=103 ctermbg=235
+	hi DiffDelete cterm=bold cterm=reverse ctermfg=131 ctermbg=235
+	hi DiffText   cterm=reverse cterm=reverse ctermfg=208 ctermbg=235
 endif

@@ -29,6 +29,7 @@ set t_Co=256
 set history=1000
 set number
 set relativenumber
+set hidden
 set cursorline
 set wrap
 set linebreak
@@ -56,12 +57,13 @@ let mapleader = "\<Space>"
 inoremap jk <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
+inoremap <C-L> <Right>
+inoremap <C-D> <Del>
 nnoremap Y y$
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
 nnoremap <F4> :buffers<CR>:edit<Space>#
 cnoremap <C-a> <Home>
-nnoremap <Tab> <C-W>w
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-K> <C-W><C-K>
@@ -79,6 +81,8 @@ nnoremap <Leader><F4> :buffers<CR>:buffer<Space>
 nnoremap <Leader>l <C-^>
 nnoremap <Leader>- :sp <CR>
 nnoremap <Leader>\ :vsp <CR>
+nnoremap <Leader>[ <C-W>t<C-W>H
+nnoremap <Leader>] <C-W>t<C-W>K
 nnoremap <Leader>go :Goyo<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch<CR>
@@ -94,6 +98,7 @@ nnoremap <LocalLeader>s :%s/\s\+$//e<CR>
 nnoremap <LocalLeader>l :set list!<CR>
 nnoremap <LocalLeader>f :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <LocalLeader>t :vertical terminal<CR>
+nnoremap <C-P> :CommandTBuffer<CR>
 
 "Alias
 :command! -bang W :execute ':silent w !sudo tee % > /dev/null' | :edit!

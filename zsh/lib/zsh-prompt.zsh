@@ -19,6 +19,7 @@ fi
 PROMPT='
 %F{255}%n%f%F{166}%B%(1j.*.)%(?..!)%b%f %F{166}%B%10c%b%f $(git_prompt_info) $(git_remote_status)
 %B${SUFFIX}%b '
+RPROMPT='%(?..%?)'
 
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{25}"

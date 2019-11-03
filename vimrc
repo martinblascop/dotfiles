@@ -55,11 +55,12 @@ let mapleader = "\<Space>"
 
 "Mappings
 inoremap jk <Esc>
+nnoremap Y y$
+nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
 inoremap <C-L> <Right>
 inoremap <C-D> <Del>
-nnoremap Y y$
 nnoremap <F4> :buffers<CR>:edit<Space>#
 cnoremap <C-a> <Home>
 nnoremap <Tab> :bn<CR>
@@ -114,6 +115,8 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
 autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L

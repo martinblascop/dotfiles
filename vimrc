@@ -5,7 +5,6 @@ source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/vimdiff.vim
 
 
-
 call plug#begin()
 
 Plug 'https://github.com/mattn/emmet-vim' "Autocomplete HTML
@@ -29,6 +28,7 @@ set t_Co=256
 set history=1000
 set number
 set relativenumber
+set ttyfast
 set hidden
 set cursorline
 set wrap

@@ -57,6 +57,7 @@ let mapleader = "\<Space>"
 inoremap jk <Esc>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
+nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
 inoremap <C-L> <Right>
@@ -128,3 +129,11 @@ autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
+
+function CursorShape(mode)
+	if a:mode == "beam"
+		execute "silent !echo -ne '\e[5 q'"
+	else
+		execute "silent !echo -ne '\e[1 q'"
+	endif
+endfunction

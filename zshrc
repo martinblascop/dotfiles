@@ -4,12 +4,6 @@ echo -ne '\e[5 q'
 #disable ctrl-s
 stty -ixon
 
-# Set env variables
-export LANG=en_US.UTF-8
-export ZSH=$HOME/.zsh
-export EDITOR=$(which vim)
-export FZF_CTRL_T_COMMAND='rg --hidden -l ""'
-
 set -C
 source $ZSH/init.zsh
 [ -f ~/.zsh/local.zsh ] && source ~/.zsh/local.zsh
@@ -25,6 +19,7 @@ alias ls='ls -F --color=auto'
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias tmuxrc="vim ~/.tmux.conf"
+alias rg='rg --colors match:fg:24'
 alias getclip='xclip -selection clipboard -o'
 alias setclip='xclip -selection clipboard'
 

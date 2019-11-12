@@ -98,8 +98,11 @@ nnoremap <Leader>q <C-W>q
 nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <LocalLeader>s :%s/\s\+$//e<CR>
 nnoremap <LocalLeader>l :set list!<CR>
-nnoremap <LocalLeader>f :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <LocalLeader>t :vertical terminal<CR>
+nnoremap <LocalLeader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
+nnoremap <LocalLeader>fn :let @- = expand("%:t:r")<CR>
+nnoremap <LocalLeader>fe :let @- = expand("%:t")<CR>
+nnoremap <LocalLeader>fp :let @- = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
 
 "Alias

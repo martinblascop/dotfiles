@@ -1,6 +1,6 @@
 syntax on
 filetype on
-colorscheme papaya
+colorscheme cassie
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/vimdiff.vim
 

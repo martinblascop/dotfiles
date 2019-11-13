@@ -62,7 +62,7 @@ call SetHi256("Boolean", "145", "NONE", "NONE")
 
 call SetHi256("Character", "248", "NONE", "NONE")
 
-call SetHi256("Comment", "245", "NONE", "italic")
+call SetHi256("Comment", "245", "NONE", "NONE")
 
 call SetHi256("Conditional", "214", "NONE", "NONE")
 
@@ -92,7 +92,7 @@ call SetHi256("DiffText", "208", "235", "reverse", "reverse")
 
 call SetHi256("Directory", "60", "NONE", "NONE")
 
-call SetHi256("Error", "167", "1", "NONE")
+call SetHi256("Error", "235", "131", "NONE")
 
 call SetHiLink("ErrorMsg", "Error")
 
@@ -126,10 +126,9 @@ call SetHi256("ModeMsg", "15", "235", "NONE")
 
 call SetHi256("MoreMsg", "137", "NONE", "NONE")
 
-"end of line charater
-call SetHi256("NonText", "238", "NONE", "NONE")
+call SetHi256("NonText", "238", "NONE", "NONE") "end of line charater
 
-call SetHi256("Normal", "152", "235", "NONE")
+call SetHi256("Normal", "152", "232", "NONE")
 
 call SetHi256("Number", "131", "NONE", "NONE")
 

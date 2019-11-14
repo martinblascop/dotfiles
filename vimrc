@@ -14,11 +14,11 @@ Plug 'https://github.com/tpope/vim-surround' " Surround plugin
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
 Plug 'https://github.com/jremmen/vim-ripgrep'
 Plug 'https://github.com/tpope/vim-repeat'
-Plug 'craigemery/vim-autotag'
 Plug 'junegunn/goyo.vim'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/wincent/command-t'
 Plug 'tpope/vim-fugitive'
+" Plug 'craigemery/vim-autotag'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 
 call plug#end()

@@ -1,4 +1,4 @@
-function virtualenv_info { [ $VIRTUAL_ENV ] && echo ‘(‘`basename $VIRTUAL_ENV`’) ‘ }
+function virtualenv_info { [ $VIRTUAL_ENV ] && echo '('$(basename $VIRTUAL_ENV)') ' }
 # A multiline prompt with username, hostname, full path, return status, git branch, git dirty status, git remote status
 
 # Check for tmux by looking at $TERM, because $TMUX won't be propagated to any nested sudo shells but $TERM will.
@@ -17,7 +17,7 @@ fi
 
 
 PROMPT='
-%F{255}%n%f%F{166}%B%(1j.*.)%(?..!)%b%f %F{166}%B%10c%b%f $(git_prompt_info) $(git_remote_status)
+%F{255}$(virtualenv_info)%f%F{255}%n%f%F{166}%B%(1j.*.)%(?..!)%b%f %F{166}%B%10c%b%f $(git_prompt_info) $(git_remote_status)
 %B${SUFFIX}%b '
 RPROMPT='%(?..%?)'
 

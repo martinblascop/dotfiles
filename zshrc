@@ -1,7 +1,7 @@
-# Use beam shape cursor
+# use beam shape cursor
 echo -ne '\e[5 q'
 
-#disable ctrl-s
+# disable ctrl-s
 stty -ixon
 
 set -C
@@ -13,7 +13,7 @@ source $ZSH/init.zsh
 
 LS_COLORS="$LS_COLORS:ow=34;1;4"
 
-# Use beam shape cursor for each new prompt
+# use beam shape cursor for each new prompt
 preexec() { echo -ne '\e[5 q' ;}
 
 alias ls='ls -F --color=auto'

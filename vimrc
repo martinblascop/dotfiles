@@ -1,6 +1,7 @@
 syntax on
 filetype on
 colorscheme cassie
+source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/vimdiff.vim
 
@@ -132,11 +133,3 @@ autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
-
-function CursorShape(mode)
-	if a:mode == "beam"
-		execute "silent !echo -ne '\e[5 q'"
-	else
-		execute "silent !echo -ne '\e[1 q'"
-	endif
-endfunction

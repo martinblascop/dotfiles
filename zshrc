@@ -16,7 +16,6 @@ LS_COLORS="$LS_COLORS:ow=34;1;4"
 # use beam shape cursor for each new prompt
 preexec() { echo -ne '\e[5 q' ;}
 
-alias ls='ls -F --color=auto'
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias tmuxrc="vim ~/.tmux.conf"

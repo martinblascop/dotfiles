@@ -19,6 +19,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/wincent/command-t'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/indentpython.vim'
 " Plug 'craigemery/vim-autotag'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 

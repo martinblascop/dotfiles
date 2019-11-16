@@ -27,6 +27,7 @@ call plug#end()
 
 "Setting variables
 set t_Co=256
+set t_ut=
 set history=1000
 set number
 set relativenumber

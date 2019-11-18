@@ -76,36 +76,36 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <Leader>h :set hlsearch!<CR>
-nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>o :only<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :xa<CR>
-nnoremap <Leader><bar> :vsp #<CR>
-nnoremap <Leader><F4> :buffers<CR>:buffer<Space>
-nnoremap <Leader>l <C-^>
-nnoremap <Leader>- :sp <CR>
-nnoremap <Leader>\ :vsp <CR>
-nnoremap <Leader>[ <C-W>t<C-W>H
-nnoremap <Leader>] <C-W>t<C-W>K
-nnoremap <Leader>go :Goyo<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>o :only<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>x :xa<CR>
+nnoremap <leader><bar> :vsp #<CR>
+nnoremap <leader><F4> :buffers<CR>:buffer<Space>
+nnoremap <leader>l <C-^>
+nnoremap <leader>- :sp <CR>
+nnoremap <leader>\ :vsp <CR>
+nnoremap <leader>[ <C-W>t<C-W>H
+nnoremap <leader>] <C-W>t<C-W>K
+nnoremap <leader>go :Goyo<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
-nnoremap <Leader>d :bd<CR>
-nnoremap <Leader>q <C-W>q
+nnoremap <leader>d :bd<CR>
+nnoremap <leader>q <C-W>q
 " nnoremap <Leader>f :FZF<CR>
-nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <LocalLeader>s :%s/\s\+$//e<CR>
-nnoremap <LocalLeader>l :set list!<CR>
-nnoremap <LocalLeader>t :vertical terminal<CR>
-nnoremap <LocalLeader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
-nnoremap <LocalLeader>fn :let @- = expand("%:t:r")<CR>
-nnoremap <LocalLeader>fe :let @- = expand("%:t")<CR>
-nnoremap <LocalLeader>fp :let @- = expand("%:p")<CR>
+nnoremap <localleader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <localleader>s :%s/\s\+$//e<CR>
+nnoremap <localleader>l :set list!<CR>
+nnoremap <localleader>t :vertical terminal<CR>
+nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
+nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
+nnoremap <localleader>fe :let @f = expand("%:t")<CR>
+nnoremap <localleader>fp :let @f = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
 
 "Alias

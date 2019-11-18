@@ -8,18 +8,19 @@ source ~/.vim/scripts/vimdiff.vim
 
 call plug#begin()
 
-Plug 'https://github.com/mattn/emmet-vim' "Autocomplete HTML
-Plug 'https://github.com/vim-airline/vim-airline' "Status line
-Plug 'https://github.com/tpope/vim-commentary' "Commentaries
-Plug 'https://github.com/tpope/vim-surround' " Surround plugin
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
-Plug 'https://github.com/jremmen/vim-ripgrep'
-Plug 'https://github.com/tpope/vim-repeat'
-Plug 'junegunn/goyo.vim'
-Plug 'https://github.com/jiangmiao/auto-pairs'
-Plug 'https://github.com/wincent/command-t'
+Plug 'vim-airline/vim-airline' "Status line
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'wincent/command-t'
+Plug 'mattn/emmet-vim' "Autocomplete HTML
+Plug 'jremmen/vim-ripgrep'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 " Plug 'craigemery/vim-autotag'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 
@@ -107,6 +108,7 @@ nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
 nnoremap <localleader>fe :let @f = expand("%:t")<CR>
 nnoremap <localleader>fp :let @f = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 
 "Alias
 :command! -bang W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -115,6 +117,7 @@ nnoremap <C-P> :CommandTBuffer<CR>
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
 let g:airline#extensions#tabline#enabled = 1
+" let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:user_emmet_leader_key=';e'
 let g:fzf_action = {

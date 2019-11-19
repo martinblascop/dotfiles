@@ -78,6 +78,7 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>r :Rg<Space>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>w :w<CR>

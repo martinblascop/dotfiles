@@ -18,7 +18,7 @@ if exists("syntax_on")
 endif
 syntax enable
 set t_Co=256
-let g:colors_name = "papaya"
+let g:colors_name = "cassie"
 
 
 " ----

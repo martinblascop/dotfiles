@@ -5,4 +5,3 @@ function CursorShape(mode)
 		execute "silent !echo -ne '\e[1 q'"
 	endif
 endfunction
-

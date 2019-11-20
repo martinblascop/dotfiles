@@ -99,7 +99,7 @@ nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q <C-W>q
-" nnoremap <Leader>f :FZF<CR>
+nnoremap <localleader>c :let @+=@0 <CR> :exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>
 nnoremap <localleader>l :set list!<CR>
@@ -110,6 +110,7 @@ nnoremap <localleader>fe :let @f = expand("%:t")<CR>
 nnoremap <localleader>fp :let @f = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+" nnoremap <Leader>f :FZF<CR>
 
 "Alias
 :command! -bang W :execute ':silent w !sudo tee % > /dev/null' | :edit!

@@ -92,7 +92,7 @@ call SetHi256("DiffText", "208", "235", "reverse", "reverse")
 
 call SetHi256("Directory", "60", "NONE", "NONE")
 
-call SetHi256("Error", "235", "131", "NONE")
+call SetHi256("Error", "131", "235", "reverse")
 
 call SetHiLink("ErrorMsg", "Error")
 

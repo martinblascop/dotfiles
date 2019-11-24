@@ -99,6 +99,7 @@ nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q <C-W>q
+nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>c :let @+=@0 <CR> :exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>

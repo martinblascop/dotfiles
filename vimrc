@@ -20,7 +20,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'sjl/gundo.vim'
+Plug 'ycm-core/YouCompleteMe'
 " Plug 'craigemery/vim-autotag'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 
@@ -99,6 +100,7 @@ nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q <C-W>q
+nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>c :let @+=@0 <CR> :exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
@@ -110,7 +112,6 @@ nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
 nnoremap <localleader>fe :let @f = expand("%:t")<CR>
 nnoremap <localleader>fp :let @f = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 " nnoremap <Leader>f :FZF<CR>
 
 "Alias

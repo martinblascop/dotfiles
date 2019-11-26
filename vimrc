@@ -3,7 +3,6 @@ filetype on
 colorscheme cassie
 source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
-source ~/.vim/scripts/vimdiff.vim
 
 
 call plug#begin()
@@ -23,7 +22,6 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
 " Plug 'craigemery/vim-autotag'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy finder
 
 call plug#end()
 
@@ -137,8 +135,12 @@ autocmd FileType help wincmd L
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 autocmd BufWinEnter *.* normal zR
-autocmd BufNewFile,BufRead log-*.php set filetype=txt
 autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd OptionSet diff call diff#setup()
+
+if &diff
+   autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
+endif

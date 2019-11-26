@@ -1,35 +1,23 @@
 " -------------------------------------------------------
-" (c) 2018 Henry Newcomer
-" "Papaya"
-"    - A Vim color scheme
+" "Cassie" "    - A Vim color scheme
 " -------------------------------------------------------
-" Source: https://github.com/HenryNewcomer/vim-theme-papaya
-" -------------------------------------------------------
-
 
 " Basic init
 scriptencoding utf-8
 set background=dark
 if version > 580
- hi clear
-if exists("syntax_on")
- syntax reset
-  endif
+	hi clear
+	if exists("syntax_on")
+		syntax reset
+	endif
 endif
 syntax enable
 set t_Co=256
 let g:colors_name = "cassie"
 
-
-" ----
-" Papaya config
-" ----
-
-
 " ----
 " Functions; outputs the highlight strings
 " ----
-
 
 function! SetHi256(group, ...)
   let theme_string = 'hi! ' . a:group . ' '
@@ -108,7 +96,9 @@ call SetHi256("Function", "68", "NONE", "NONE")
 
 call SetHiLink("Identifier", "Function")
 
-call SetHi256("IncSearch", "17", "25", "NONE")
+call SetHi256("IncSearch", "193", "25", "NONE")
+
+call SetHi256("Search", "0", "222", "NONE")
 
 call SetHi256("Include", "137", "NONE", "NONE")
 
@@ -148,8 +138,6 @@ call SetHi256("PreProc", "74", "NONE", "NONE")
 
 call SetHi256("Repeat", "137", "NONE", "NONE")
 
-call SetHi256("Search", "45", "33", "NONE")
-
 call SetHi256("SignColumn", "235", "60", "NONE")
 
 call SetHi256("Special", "137", "NONE", "NONE")
@@ -173,9 +161,9 @@ call SetHiLink("SpellRare", "SpellBad")
 
 call SetHi256("Statement", "78", "NONE", "NONE")
 
-call SetHi256("StatusLine", "235", "240", "NONE")
+call SetHi256("StatusLine", "191", "236", "NONE")
 
-call SetHi256("StatusLineNC", "59", "237", "NONE")
+call SetHi256("StatusLineNC", "237", "237", "NONE")
 
 call SetHi256("StorageClass", "60", "NONE", "NONE")
 
@@ -209,7 +197,7 @@ call SetHi256("VisualNOS", "235", "189", "underline")
 
 call SetHi256("WarningMsg", "248", "88", "NONE")
 
-call SetHi256("WildMenu", "NONE", "248", "NONE")
+call SetHi256("WildMenu", "191", "236", "Underline")
 
 
 " ----
@@ -272,7 +260,7 @@ call SetHi256("OverLength", "233", "59", "NONE")
 call SetHi256("CursorLineNr", "118", "NONE", "bold")
 
 " ----
-" Overwrite colors if alternative Papaya scheme is called
+" Overwrite colors if alternative scheme is called
 " ----
 
 " PHP

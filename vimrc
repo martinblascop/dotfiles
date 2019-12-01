@@ -17,7 +17,6 @@ Plug 'mattn/emmet-vim' "Autocomplete HTML
 Plug 'jremmen/vim-ripgrep'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
@@ -89,13 +88,11 @@ nnoremap <leader>- :sp <CR>
 nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
 nnoremap <leader>] <C-W>t<C-W>K
-nnoremap <leader>go :Goyo<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gm :Git checkout master<CR>
-nnoremap <leader>g- :Git checkout -<CR>
+nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q <C-W>q
 nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
@@ -121,7 +118,7 @@ nnoremap <C-P> :CommandTBuffer<CR>
 let g:airline#extensions#tabline#enabled = 1
 " let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:user_emmet_leader_key=';e'
+let g:user_emmet_leader_key='<C-Z>'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',

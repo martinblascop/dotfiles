@@ -118,7 +118,7 @@ nnoremap <C-P> :CommandTBuffer<CR>
 let g:airline#extensions#tabline#enabled = 1
 " let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<Esc>e'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',

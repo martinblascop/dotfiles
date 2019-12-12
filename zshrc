@@ -27,6 +27,7 @@ preexec() { echo -ne '\e[5 q' ;}
 
 bindkey "^j" vi-cmd-mode
 bindkey "^[l" autosuggest-accept
+bindkey '^x^x' edit-command-line
 
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd  ]] || [[ $1 = 'block'  ]]; then

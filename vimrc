@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'wincent/command-t'
 Plug 'mattn/emmet-vim' "Autocomplete HTML
 Plug 'jremmen/vim-ripgrep'
@@ -92,6 +93,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q <C-W>q

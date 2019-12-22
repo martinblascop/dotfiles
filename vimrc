@@ -79,6 +79,7 @@ nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg<Space>
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>

@@ -16,9 +16,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'wincent/command-t'
 Plug 'mattn/emmet-vim' "Autocomplete HTML
 Plug 'jremmen/vim-ripgrep'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " On-demand loading
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
 " Plug 'craigemery/vim-autotag'
@@ -118,6 +119,7 @@ nnoremap <C-P> :CommandTBuffer<CR>
 :command! -bar -bang Qa quita<bang>
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
+let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1
 " let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'

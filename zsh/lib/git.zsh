@@ -306,6 +306,7 @@ alias glola="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgr
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 alias glp="_git_log_prettily"
+alias glfs="git ls-files -v | grep \"^S\""
 alias gm='git merge'
 alias gmom='git merge origin/master'
 alias gmt='git mergetool --no-prompt'

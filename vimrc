@@ -58,7 +58,7 @@ set incsearch
 let mapleader = "\<Space>"
 
 "Mappings
-inoremap jk <Esc>
+inoremap <C-C> <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
 inoremap <C-L> <Right>

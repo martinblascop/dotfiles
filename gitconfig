@@ -19,3 +19,6 @@
 
 [log]
 	decorate = auto
+
+[alias]
+    last-edited = log --pretty=format: --name-only -n 1

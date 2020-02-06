@@ -6,6 +6,14 @@ function! CursorShape(mode)
 	endif
 endfunction
 
+function! BSkipQuickFix(command)
+  let start_buffer = bufnr('%')
+  execute a:command
+  while &buftype ==# 'quickfix' && bufnr('%') != start_buffer
+    execute a:command
+  endwhile
+endfunction
+
 function! SyntaxAttr()
 	let synid = ""
 	let guifg = ""

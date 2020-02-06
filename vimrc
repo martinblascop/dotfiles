@@ -68,8 +68,8 @@ nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>
 nnoremap <F4> :buffers<CR>:edit<Space>#
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
+nnoremap <Tab> :call BSkipQuickFix("bn")<CR>
+nnoremap <S-Tab> :call BSkipQuickFix("bp")<CR>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-K> <C-W><C-K>

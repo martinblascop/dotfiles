@@ -74,6 +74,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
+nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>

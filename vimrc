@@ -3,18 +3,19 @@ filetype on
 colorscheme cassie
 source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
+source ~/.vim/scripts/syntax_attr.vim
 
 
 call plug#begin()
 
-Plug 'vim-airline/vim-airline' "Status line
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'wincent/command-t'
-Plug 'mattn/emmet-vim' "Autocomplete HTML
+Plug 'mattn/emmet-vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
@@ -147,3 +148,5 @@ autocmd OptionSet diff call diff#setup()
 if &diff
    autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
 endif
+
+call SourceIfExists("~/.vimrc.local")

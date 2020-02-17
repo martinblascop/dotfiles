@@ -21,4 +21,5 @@
 	decorate = auto
 
 [alias]
-    last-edited = log --pretty=format: --name-only -n 1
+	last-edited = log --pretty=format: --name-only -n 1
+	unmerged = diff --name-only --diff-filter=U

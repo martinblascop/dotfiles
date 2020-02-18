@@ -85,6 +85,7 @@ nnoremap <leader>r :Rg<Space>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>o :only<CR>
+nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
 nnoremap <leader><bar> :vsp #<CR>
@@ -122,6 +123,7 @@ nnoremap <C-P> :CommandTBuffer<CR>
 :command! -bar -bang Qa quita<bang>
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
+let @p = ' '
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1
 " let g:ycm_use_clangd = 1

@@ -95,6 +95,7 @@ nnoremap <leader>- :sp <CR>
 nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
 nnoremap <leader>] <C-W>t<C-W>K
+nnoremap <leader>ge :vsp<CR>:Gedit master:%
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>

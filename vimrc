@@ -63,9 +63,10 @@ let mapleader = "\<Space>"
 inoremap <C-C> <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
-inoremap <C-L> <Right>
+inoremap <C-F> <Right>
+inoremap <C-B> <Left>
 inoremap <C-D> <Del>
-cnoremap <C-a> <Home>
+cnoremap <C-A> <Home>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>

@@ -1,3 +1,38 @@
+function lsgit () {
+  if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1
+  then
+    get_repository_status
+  else
+    find . -maxdepth 2 -name .git -type d -exec dirname {} \; | while read directory
+    do
+      get_repository_status "${directory}"
+    done
+  fi
+}
+
+function get_repository_status () {
+  directory="${1:-.}"
+  name=$(basename $(git -C ${directory} rev-parse --show-toplevel))
+  branch=$(git -C ${directory} rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ $? -ne 0 ]
+  then
+    echo -e "${name} ${INACTIVE_COLOR}(no commits)${RESET_COLOR}"
+    return
+  fi
+  echo -en "${name}"
+  if [[ "${branch}" == "master" ]]
+  then
+    echo -en " ${SUCCESS_COLOR}(${branch})${RESET_COLOR}"
+  else
+    echo -en " ${WARN_COLOR}(${branch})${RESET_COLOR}"
+  fi
+  if [ -n "$(git -C ${directory} status --porcelain)" ]
+  then
+    echo -en " ${ERROR_COLOR}(dirty)${RESET_COLOR}"
+  fi
+  echo
+}
+
 # Outputs current branch info in prompt format
 function git_prompt_info() {
   local ref

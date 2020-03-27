@@ -66,6 +66,8 @@ inoremap <C-J> <Down>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-D> <Del>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
 cnoremap <C-A> <Home>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>

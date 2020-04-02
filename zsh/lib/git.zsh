@@ -1,3 +1,9 @@
+ERROR_COLOR='\033[1;31m'
+WARN_COLOR='\033[1;33m'
+SUCCESS_COLOR='\033[1;32m'
+INACTIVE_COLOR='\033[1;90m'
+RESET_COLOR='\033[0m'
+
 function lsgit () {
   if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1
   then
@@ -16,19 +22,19 @@ function get_repository_status () {
   branch=$(git -C ${directory} rev-parse --abbrev-ref HEAD 2>/dev/null)
   if [ $? -ne 0 ]
   then
-    echo -e "${name} ${INACTIVE_COLOR}(no commits)${RESET_COLOR}"
+    printf "${name} ${INACTIVE_COLOR}(no commits)${RESET_COLOR}"
     return
   fi
   echo -en "${name}"
   if [[ "${branch}" == "master" ]]
   then
-    echo -en " ${SUCCESS_COLOR}(${branch})${RESET_COLOR}"
+    printf " ${SUCCESS_COLOR}(${branch})${RESET_COLOR}"
   else
-    echo -en " ${WARN_COLOR}(${branch})${RESET_COLOR}"
+    printf " ${WARN_COLOR}(${branch})${RESET_COLOR}"
   fi
   if [ -n "$(git -C ${directory} status --porcelain)" ]
   then
-    echo -en " ${ERROR_COLOR}(dirty)${RESET_COLOR}"
+    printf " ${ERROR_COLOR}(dirty)${RESET_COLOR}"
   fi
   echo
 }

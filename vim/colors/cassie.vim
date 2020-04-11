@@ -46,8 +46,6 @@ endfunction
 " Define main color scheme properties
 " ----
 
-call SetHi256('Keyword', '166', 'NONE', 'NONE')
-
 call SetHi256('Boolean', '172', 'NONE', 'NONE')
 
 call SetHi256('Conditional', '172', 'NONE', 'NONE')
@@ -88,7 +86,7 @@ call SetHiLink('ErrorMsg', 'Error')
 
 call SetHi256('Exception', '33', 'NONE', 'NONE')
 
-call SetHi256('Float', '248', 'NONE', 'NONE')
+call SetHiLink('Float', 'Number')
 
 call SetHi256('FoldColumn', '235', '248', 'NONE')
 
@@ -100,9 +98,9 @@ call SetHiLink('Identifier', 'Function')
 
 call SetHi256('IncSearch', '193', '25', 'NONE')
 
-call SetHi256('Search', '0', '222', 'NONE')
-
 call SetHi256('Include', '137', 'NONE', 'NONE')
+
+call SetHi256('Keyword', '166', 'NONE', 'NONE')
 
 call SetHi256('Label', '137', 'NONE', 'NONE')
 
@@ -119,6 +117,8 @@ call SetHi256('MoreMsg', '137', 'NONE', 'NONE')
 call SetHi256('NonText', '238', 'NONE', 'NONE') "end of line charater
 
 call SetHi256('Normal', '152', '232', 'NONE')
+
+call SetHi256('Null', 'NONE', 'NONE', 'NONE')
 
 call SetHi256('Number', '131', 'NONE', 'NONE')
 
@@ -137,6 +137,8 @@ call SetHi256('PreCondit', '47', 'NONE', 'NONE')
 call SetHi256('PreProc', '74', 'NONE', 'NONE')
 
 call SetHi256('Repeat', '137', 'NONE', 'NONE')
+
+call SetHi256('Search', '0', '222', 'NONE')
 
 call SetHi256('SignColumn', '235', '60', 'NONE')
 
@@ -198,8 +200,6 @@ call SetHi256('WarningMsg', '248', '88', 'NONE')
 
 call SetHi256('WildMenu', '191', '236', 'Underline')
 
-call SetHi256('Null', 'NONE', 'NONE', 'NONE')
-
 
 " ----
 " Language Specific
@@ -255,6 +255,8 @@ call SetHiLink('markdownXmlElement', 'htmlTag')
 call SetHiLink('phpTodo', 'TODO')
 call SetHiLink('phpVarSelector', 'Constant')
 call SetHiLink('phpIdentifier', 'Constant')
+call SetHiLink('phpIntVar', 'Constant')
+call SetHiLink('phpEnvVar', 'Constant')
 call SetHiLink('phpConstant', 'Constant')
 call SetHiLink('phpCoreConstant', 'Constant')
 call SetHiLink('phpComment', 'Comment')

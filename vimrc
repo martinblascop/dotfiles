@@ -91,6 +91,7 @@ nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
+nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader><bar> :vsp #<CR>
 nnoremap <leader><F4> :buffers<CR>:buffer<Space>
 nnoremap <leader>l <C-^>

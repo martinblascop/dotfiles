@@ -136,6 +136,8 @@ call SetHi256('PreCondit', '47', 'NONE', 'NONE')
 
 call SetHi256('PreProc', '74', 'NONE', 'NONE')
 
+call SetHiLink('QuickFixLine', 'Normal')
+
 call SetHi256('Repeat', '137', 'NONE', 'NONE')
 
 call SetHi256('Search', '0', '222', 'NONE')

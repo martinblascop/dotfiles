@@ -147,10 +147,13 @@ autocmd FileType help wincmd L
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 autocmd BufWinEnter *.* normal zR
-autocmd BufNewFile,BufRead *.conf set filetype=sh
+autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=4 linebreak
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.conf set filetype=sh
+autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
 autocmd OptionSet diff call diff#setup()
 
 if &diff

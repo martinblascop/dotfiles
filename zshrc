@@ -4,9 +4,13 @@ echo -ne '\e[5 q'
 # disable ctrl-s
 stty -ixon
 
-set -C
-source $ZSH/init.zsh
+# set tab stop to 4
+tabs 4
 
+# disable clobbering
+set -C
+
+source $ZSH/init.zsh
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'

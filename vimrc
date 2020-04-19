@@ -79,6 +79,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
+nnoremap <C-Up> :resize -5<CR>
+nnoremap <C-Down> :resize +5<CR>
+nnoremap <C-Right> :vertical resize +5<CR>
+nnoremap <C-Left> :vertical resize -5<CR>
 nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
@@ -160,4 +164,4 @@ if &diff
    autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
 endif
 
-call SourceIfExists("~/.vimrc.local")
+call SourceIfExists('~/.vimrc.local')

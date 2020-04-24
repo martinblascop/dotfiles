@@ -24,7 +24,7 @@ Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'janko/vim-test'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'craigemery/vim-autotag'
 
 call plug#end()

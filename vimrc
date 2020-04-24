@@ -24,6 +24,7 @@ Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'janko/vim-test'
+Plug 'fatih/vim-go'
 " Plug 'craigemery/vim-autotag'
 
 call plug#end()
@@ -88,7 +89,8 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>r :Rg<Space>
+nnoremap <leader>r :Rg <C-R>0<CR>
+nnoremap <leader>k :Rg <cword><CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>o :only<CR>

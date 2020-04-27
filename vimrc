@@ -24,12 +24,12 @@ Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'janko/vim-test'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " Plug 'craigemery/vim-autotag'
 
 call plug#end()
 
-"Setting variables
+" Setting variables
 set t_Co=256
 set t_ut=
 set history=1000
@@ -57,10 +57,10 @@ set autoread
 set splitright
 set incsearch
 
-"Change leader key
+" Change leader key
 let mapleader = "\<Space>"
 
-"Mappings
+" Mappings
 inoremap <C-C> <Esc>
 inoremap <C-K> <Up>
 inoremap <C-J> <Down>
@@ -91,8 +91,9 @@ nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>
 nnoremap <leader>k :Rg <cword><CR>
+nnoremap <leader>f :Rg<space>
 nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>, :NERDTreeFind<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
@@ -100,7 +101,7 @@ nnoremap <leader>x :xa<CR>
 nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader><bar> :vsp #<CR>
 nnoremap <leader><F4> :buffers<CR>:buffer<Space>
-nnoremap <leader>l <C-^>
+nnoremap <leader>l q:
 nnoremap <leader>- :sp <CR>
 nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
@@ -128,7 +129,7 @@ nnoremap <localleader>fp :let @f = expand("%:p")<CR>
 nnoremap <C-P> :CommandTBuffer<CR>
 " nnoremap <Leader>f :FZF<CR>
 
-"Alias
+" Alias
 :command! -bang W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 :command! -bar -bang Q quit<bang>
 :command! -bar -bang Qa quita<bang>
@@ -147,7 +148,6 @@ let g:fzf_action = {
 
 autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
 autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
-autocmd CursorHold,CursorHoldI * checktime
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
 autocmd BufWinLeave *.* mkview

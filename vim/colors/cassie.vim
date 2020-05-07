@@ -253,6 +253,11 @@ call SetHiLink('markdownUrlLinkInText', 'markdownLinkUrl')
 call SetHiLink('markdownXmlElement', 'htmlTag')
 
 
+" YAML
+call SetHi256('yamlFlowIndicator', '169', 'NONE', 'NONE')
+call SetHiLink('yamlBool', 'Boolean')
+call SetHiLink('yamlDocumentStart', 'Number')
+
 " PHP
 call SetHiLink('phpTodo', 'TODO')
 call SetHiLink('phpVarSelector', 'Constant')

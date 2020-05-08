@@ -153,7 +153,7 @@ autocmd FileType help wincmd L
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 autocmd BufWinEnter *.* normal zR
-autocmd FileType sh setlocal tabstop=4 softtabstop=4 shiftwidth=4 linebreak
+autocmd FileType sh,gitconfig setlocal tabstop=4 softtabstop=4 shiftwidth=4 linebreak
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab

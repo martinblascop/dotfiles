@@ -1,8 +1,8 @@
 [user]
-        # These values are set in ~/.gitconfig.local
+	# These values are set in ~/.gitconfig.local
 
 [include]
-        path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 
 [core]
 	editor = vim

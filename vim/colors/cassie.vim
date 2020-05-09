@@ -207,6 +207,11 @@ call SetHi256('WildMenu', '191', '236', 'Underline')
 " Language Specific
 " ----
 
+" sh
+call SetHiLink('shStatement', 'Keyword')
+call SetHiLink('shSet', 'Keyword')
+call SetHiLink('shAlias', 'Null')
+
 " JavaScript
 call SetHi256('javaScript', 'NONE', 'NONE', 'NONE') " javaScript -> Special
 call SetHi256('javaScriptBraces', '169', 'NONE', 'NONE')

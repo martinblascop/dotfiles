@@ -9,6 +9,12 @@
 	excludesfile = ~/.gitignore
 	pager = less -x1,5
 
+[pull]
+	rebase = true
+
+[rebase]
+	autosquash = true
+
 [merge]
 	tool = vimdiff
 

@@ -15,15 +15,10 @@ alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
 alias rg='rg --colors match:fg:24'
-alias getclip='xclip -selection clipboard -o'
-alias setclip='xclip -selection clipboard'
 
-[ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
-[ -f ~/.zsh/local.zsh ] && source ~/.zsh/local.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-LS_COLORS="$LS_COLORS:ow=34;1;4"
 
 # use beam shape cursor for each new prompt
 preexec() { echo -ne '\e[5 q' ;}

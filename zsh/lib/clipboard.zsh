@@ -4,14 +4,14 @@ if [[ "$OSTYPE" == "Linux" ]];then
 	alias getclip='xclip -selection clipboard -o'
 	alias setclip='xclip -selection clipboard'
 else
-	alias getclip='pbcopy'
-	alias setclip='pbpaste'
+	alias getclip='pbpaste'
+	alias setclip='pbcopy'
 fi
 
 
 _copy-region-as-kill () {
   zle copy-region-as-kill
-  print -rn $CUTBUFFER | xclip -selection clipboard
+  print -rn $CUTBUFFER | setclip
   print -n ' # copied '
 }
 

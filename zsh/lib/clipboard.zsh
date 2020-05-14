@@ -16,5 +16,3 @@ _copy-region-as-kill () {
 }
 
 zle -N _copy-region-as-kill
-
-bindkey "^[y" _copy-region-as-kill

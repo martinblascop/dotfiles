@@ -9,16 +9,16 @@ endfunction
 
 "Not show quickfix buffer when switching buffers
 function! BSkipQuickFix(command)
-  let start_buffer = bufnr('%')
-  execute a:command
-  while &buftype ==# 'quickfix' && bufnr('%') != start_buffer
-    execute a:command
-  endwhile
+	let start_buffer = bufnr('%')
+	execute a:command
+	while &buftype ==# 'quickfix' && bufnr('%') != start_buffer
+	execute a:command
+	endwhile
 endfunction
 
 "Source file if exists
 function! SourceIfExists(file)
-  if filereadable(expand(a:file))
-    exe 'source' a:file
-  endif
+	if filereadable(expand(a:file))
+		exe 'source' a:file
+	endif
 endfunction

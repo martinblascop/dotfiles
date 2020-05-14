@@ -56,6 +56,9 @@ set modifiable
 set autoread
 set splitright
 set incsearch
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " Change leader key
 let mapleader = "\<Space>"
@@ -153,7 +156,6 @@ autocmd FileType help wincmd L
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 autocmd BufWinEnter *.* normal zR
-autocmd FileType sh,gitconfig setlocal tabstop=4 softtabstop=4 shiftwidth=4 linebreak
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
@@ -163,7 +165,7 @@ autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 sh
 autocmd OptionSet diff call diff#setup()
 
 if &diff
-   autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
+	autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
 endif
 
 call SourceIfExists('~/.vimrc.local')

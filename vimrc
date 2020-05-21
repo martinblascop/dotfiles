@@ -91,6 +91,8 @@ nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<C
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <leader>q :cq<CR>
+nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>
 nnoremap <leader>k :Rg <cword><CR>
@@ -117,11 +119,9 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>q <C-W>q
 nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>c :let @+=@0 <CR>:exec "echo 'copied to clipboard'"<CR>
-nnoremap <localleader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>
 nnoremap <localleader>l :set list!<CR>
 nnoremap <localleader>t :vertical terminal<CR>

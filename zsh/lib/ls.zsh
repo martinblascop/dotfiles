@@ -7,3 +7,5 @@ fi
 [ -f ~/.dir_colors ] && eval "$(dircolors ~/.dir_colors)"
 
 LS_COLORS="$LS_COLORS:ow=34;1;4"
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

@@ -73,6 +73,7 @@ inoremap <C-D> <Del>
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
 cnoremap <C-A> <Home>
+vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>
@@ -99,6 +100,7 @@ nnoremap <leader>k :Rg <cword><CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>, :NERDTreeFind<CR>
+nnoremap <leader>; _vg_
 nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>

@@ -20,25 +20,25 @@ let g:colors_name = 'cassie'
 " ----
 
 function! SetHi256(group, ...)
-  let theme_string = 'hi! ' . a:group . ' '
-  if strlen(a:1)
-    let theme_string .= 'ctermfg=' . a:1 . ' '
-  endif
-  if strlen(a:2)
-    let theme_string .= 'ctermbg=' . a:2 . ' '
-  endif
-  if a:0 >= 3 && strlen(a:3)
-    let theme_string .= 'cterm=' . a:3 . ' '
-  endif
-  if a:0 >= 4 && strlen(a:4)
-    let theme_string .= 'cterm=' . a:4
-  endif
-  execute theme_string
+	let theme_string = 'hi! ' . a:group . ' '
+	if strlen(a:1)
+		let theme_string .= 'ctermfg=' . a:1 . ' '
+	endif
+	if strlen(a:2)
+		let theme_string .= 'ctermbg=' . a:2 . ' '
+	endif
+	if a:0 >= 3 && strlen(a:3)
+		let theme_string .= 'cterm=' . a:3 . ' '
+	endif
+	if a:0 >= 4 && strlen(a:4)
+		let theme_string .= 'cterm=' . a:4
+	endif
+	execute theme_string
 endfunction
 
 function! SetHiLink(group, linkTo)
-  let theme_string = 'hi! link ' . a:group . ' ' . a:linkTo
-  execute theme_string
+	let theme_string = 'hi! link ' . a:group . ' ' . a:linkTo
+	execute theme_string
 endfunction
 
 
@@ -138,7 +138,7 @@ call SetHi256('PreProc', '74', 'NONE', 'NONE')
 
 call SetHiLink('QuickFixLine', 'Normal')
 
-call SetHi256('Repeat', '137', 'NONE', 'NONE')
+call SetHiLink('Repeat', 'Statement')
 
 call SetHi256('Search', '0', '222', 'NONE')
 
@@ -162,7 +162,7 @@ call SetHiLink('SpellRare', 'SpellBad')
 
 call SetHiLink('SpellRare', 'SpellBad')
 
-call SetHi256('Statement', '78', 'NONE', 'NONE')
+call SetHi256('Statement', '167', 'NONE', 'NONE')
 
 call SetHi256('StatusLine', '191', '236', 'NONE')
 
@@ -170,7 +170,7 @@ call SetHi256('StatusLineNC', '237', '237', 'NONE')
 
 call SetHi256('StorageClass', '60', 'NONE', 'NONE')
 
-call SetHi256('String', '66', 'NONE', 'NONE')
+call SetHi256('String', '29', 'NONE', 'NONE')
 
 call SetHi256('Structure', '60', 'NONE', 'NONE')
 
@@ -225,6 +225,7 @@ call SetHiLink('javaScriptOperator', 'Keyword')
 
 " HTML
 call SetHi256('htmlTag', '65', 'NONE', 'NONE')
+call SetHi256('htmlTagName', '78', 'NONE', 'NONE')
 call SetHiLink('htmlEndTag', 'htmlTag')
 call SetHiLink('htmlTagN', 'htmlTag')
 call SetHiLink('htmlSpecialTagName', 'htmlTagName')

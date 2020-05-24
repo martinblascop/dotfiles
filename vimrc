@@ -29,7 +29,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 call plug#end()
 
-" Setting variables
+" Settings
 set t_Co=256
 set t_ut=
 set history=1000
@@ -65,15 +65,14 @@ let mapleader = "\<Space>"
 
 " Mappings
 inoremap <C-C> <Esc>
-inoremap <C-K> <Up>
-inoremap <C-J> <Down>
-inoremap <C-F> <Right>
-inoremap <C-B> <Left>
-inoremap <C-D> <Del>
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
+inoremap <C-F> <Right>
+inoremap <C-B> <Left>
 cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
+nnoremap Q :cq<CR>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>

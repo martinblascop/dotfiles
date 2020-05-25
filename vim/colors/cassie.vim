@@ -162,7 +162,7 @@ call SetHiLink('SpellRare', 'SpellBad')
 
 call SetHiLink('SpellRare', 'SpellBad')
 
-call SetHi256('Statement', '167', 'NONE', 'NONE')
+call SetHi256('Statement', '98', 'NONE', 'NONE')
 
 call SetHi256('StatusLine', '191', '236', 'NONE')
 
@@ -211,6 +211,10 @@ call SetHi256('WildMenu', '191', '236', 'Underline')
 call SetHiLink('shStatement', 'Keyword')
 call SetHiLink('shSet', 'Keyword')
 call SetHiLink('shAlias', 'Null')
+
+" sql
+call SetHiLink('sqlStatement', 'Type')
+call SetHiLink('sqlSpecial', 'Type')
 
 " JavaScript
 call SetHi256('javaScript', 'NONE', 'NONE', 'NONE') " javaScript -> Special

@@ -122,7 +122,7 @@ call SetHi256('Null', 'NONE', 'NONE', 'NONE')
 
 call SetHi256('Number', '131', 'NONE', 'NONE')
 
-call SetHi256('Operator', '60', 'NONE', 'NONE')
+call SetHi256('Operator', '61', 'NONE', 'NONE')
 
 call SetHi256('PMenu', '236', '60', 'NONE')
 
@@ -211,6 +211,7 @@ call SetHi256('WildMenu', '191', '236', 'Underline')
 call SetHiLink('shStatement', 'Keyword')
 call SetHiLink('shSet', 'Keyword')
 call SetHiLink('shAlias', 'Null')
+call SetHiLink('shQuote', 'String')
 
 " sql
 call SetHiLink('sqlStatement', 'Type')
@@ -293,7 +294,7 @@ call SetHiLink('phpFloat', 'Float')
 call SetHiLink('phpMethods', 'Function')
 call SetHiLink('phpFunction', 'Keyword')
 call SetHiLink('phpBaselib', 'Function')
-call SetHiLink('phpRepeat', 'Repeat')
+call SetHiLink('phpRepeat', 'Keyword')
 call SetHiLink('phpConditional', 'Keyword')
 call SetHiLink('phpLabel', 'Label')
 call SetHiLink('phpStatement', 'Keyword')

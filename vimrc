@@ -9,20 +9,21 @@ source ~/.vim/scripts/syntax_attr.vim
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'wincent/command-t'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'wincent/command-t'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'mattn/emmet-vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'janko/vim-test'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " Plug 'craigemery/vim-autotag'
@@ -72,6 +73,7 @@ inoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
+vnoremap <leader>gg :'<,'>Gbrowse<CR>
 nnoremap Q :cq<CR>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>

@@ -124,6 +124,8 @@ call SetHi256('Number', '131', 'NONE', 'NONE')
 
 call SetHi256('Operator', '61', 'NONE', 'NONE')
 
+call SetHiLink('Quote', 'String')
+
 call SetHi256('PMenu', '236', '60', 'NONE')
 
 call SetHi256('PMenuSbar', '196', '239', 'NONE')
@@ -278,6 +280,7 @@ call SetHiLink('phpEnvVar', 'Constant')
 call SetHiLink('phpConstant', 'Constant')
 call SetHiLink('phpCoreConstant', 'Constant')
 call SetHiLink('phpComment', 'Comment')
+call SetHiLink('phpComparison', 'Boolean')
 call SetHiLink('phpDocTags', 'Keyword')
 call SetHiLink('phpDocCustomTags', 'Keyword')
 call SetHiLink('phpException', 'Exception')

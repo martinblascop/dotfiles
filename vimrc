@@ -26,6 +26,8 @@ Plug 'nvie/vim-flake8'
 Plug 'sjl/gundo.vim'
 Plug 'janko/vim-test'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'ap/vim-css-color'
+Plug 'alvan/vim-closetag'
 " Plug 'craigemery/vim-autotag'
 
 call plug#end()
@@ -73,7 +75,7 @@ inoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
-vnoremap <leader>gg :'<,'>Gbrowse<CR>
+vnoremap <leader>gg :Gbrowse<CR>
 nnoremap Q :cq<CR>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>

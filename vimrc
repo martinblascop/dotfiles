@@ -8,26 +8,26 @@ source ~/.vim/scripts/syntax_attr.vim
 
 call plug#begin()
 
-Plug 'vim-airline/vim-airline'
-Plug 'wincent/command-t'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'shumphrey/fugitive-gitlab.vim'
-Plug 'mattn/emmet-vim'
-Plug 'jremmen/vim-ripgrep'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'nvie/vim-flake8'
-Plug 'sjl/gundo.vim'
-Plug 'janko/vim-test'
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
-Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
+Plug 'ap/vim-css-color'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'janko/vim-test'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jremmen/vim-ripgrep'
+Plug 'mattn/emmet-vim'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/nerdtree'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'wincent/command-t'
+Plug 'ycm-core/YouCompleteMe'
 " Plug 'craigemery/vim-autotag'
 
 call plug#end()
@@ -59,6 +59,7 @@ set modifiable
 set autoread
 set splitright
 set incsearch
+set smartcase
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -76,7 +77,7 @@ cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
 vnoremap <leader>gg :Gbrowse<CR>
-nnoremap Q :cq<CR>
+nnoremap Q <Nop>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <silent> <C-z> :call CursorShape("beam")<CR>:suspend<bar>:call CursorShape("block")<CR>
@@ -125,6 +126,7 @@ nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
+nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>c :let @+=@0 <CR>:exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>
@@ -158,12 +160,7 @@ autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
 autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
-autocmd BufWinEnter *.* normal zR
-autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
-autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
+autocmd FileType yaml,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif

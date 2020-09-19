@@ -33,8 +33,6 @@ function zle-keymap-select {
 
 zle -N zle-keymap-select
 
-bindkey '^j' vi-cmd-mode
 bindkey '^x^j' edit-command-line
 bindkey '^x^u' undo
-bindkey '^[l' autosuggest-accept
 bindkey '^[y' _copy-region-as-kill

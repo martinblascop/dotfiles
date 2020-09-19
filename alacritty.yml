@@ -481,8 +481,8 @@ debug:
 key_bindings:
   # (Linux only)
   - { key: Period,    mods: Control,       chars: "\x1b\x2e"                        }
+  - { key: Comma,     mods: Control,       chars: "\x18\x0a"                        }
   - { key: Slash,     mods: Control,       chars: "\x18\x15"                        }
-  - { key: Semicolon, mods: Control,       chars: "\x1b\x6c"                        }
   - { key: Key0,      mods: Control,       chars: "\x1b\x4f\x50\x30"                }
   - { key: V,         mods: Control|Shift, action: Paste                            }
   - { key: C,         mods: Control|Shift, action: Copy                             }

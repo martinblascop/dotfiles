@@ -11,6 +11,7 @@ call plug#begin()
 Plug 'alvan/vim-closetag'
 Plug 'ap/vim-css-color'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'hashivim/vim-terraform'
 Plug 'janko/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jremmen/vim-ripgrep'

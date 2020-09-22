@@ -45,6 +45,7 @@ set cursorline
 set wrap
 set linebreak
 set wildmenu
+set wildcharm=<Tab>
 set ignorecase
 set backspace=indent,eol,start
 set tags=./tags,./.tags,tags,.tags,
@@ -76,6 +77,7 @@ inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
+cnoremap <expr> <C-J> wildmenumode() ? "\<Down>" : "\<C-J>"
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
 vnoremap <leader>gg :Gbrowse<CR>
 nnoremap Q <Nop>

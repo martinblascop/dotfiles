@@ -11,17 +11,13 @@ tabs 4
 set -C
 
 source $ZSH/init.zsh
-alias vimrc='vim ~/.vimrc'
-alias zshrc='vim ~/.zshrc'
-alias tmuxrc='vim ~/.tmux.conf'
-alias rg='rg --colors match:fg:24'
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # use beam shape cursor for each new prompt
-preexec() { echo -ne '\e[5 q' ;}
+preexec() { echo -ne '\e[5 q'; }
 
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd  ]] || [[ $1 = 'block'  ]]; then
@@ -36,3 +32,8 @@ zle -N zle-keymap-select
 bindkey '^x^j' edit-command-line
 bindkey '^x^u' undo
 bindkey '^[y' _copy-region-as-kill
+
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+alias tmuxrc='vim ~/.tmux.conf'
+alias rg='rg --colors match:fg:24'

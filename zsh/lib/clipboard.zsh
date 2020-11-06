@@ -10,9 +10,10 @@ fi
 
 
 _copy-region-as-kill () {
-  zle copy-region-as-kill
-  print -rn $CUTBUFFER | setclip
-  print -n ' # copied '
+	zle end-of-line
+	zle copy-region-as-kill
+	print -rn $CUTBUFFER | setclip
+	RBUFFER=" # copied $RBUFFER"
 }
 
 zle -N _copy-region-as-kill

@@ -219,7 +219,7 @@ call SetHiLink('shQuote', 'String')
 call SetHiLink('sqlStatement', 'Type')
 call SetHiLink('sqlSpecial', 'Type')
 
-" JavaScript
+" javascript
 call SetHi256('javaScript', 'NONE', 'NONE', 'NONE') " javaScript -> Special
 call SetHi256('javaScriptBraces', '169', 'NONE', 'NONE')
 call SetHiLink('javaScriptFunction', 'Function')
@@ -230,14 +230,14 @@ call SetHiLink('javaScriptTodo', 'Todo')
 call SetHiLink('javaScriptException', 'Exception')
 call SetHiLink('javaScriptOperator', 'Keyword')
 
-" HTML
+" html
 call SetHi256('htmlTag', '65', 'NONE', 'NONE')
 call SetHi256('htmlTagName', '78', 'NONE', 'NONE')
 call SetHiLink('htmlEndTag', 'htmlTag')
 call SetHiLink('htmlTagN', 'htmlTag')
 call SetHiLink('htmlSpecialTagName', 'htmlTagName')
 
-" Markdown
+" markdown
 call SetHi256('markdownBold', '15', 'NONE', 'bold')
 call SetHi256('markdownCodeBlock', '145', '59', 'NONE')
 call SetHiLink('markdownCodeDelimiter', 'markdownCodeBlock')
@@ -265,13 +265,18 @@ call SetHiLink('markdownTextContainer', 'Function')
 call SetHiLink('markdownUrlLinkInText', 'markdownLinkUrl')
 call SetHiLink('markdownXmlElement', 'htmlTag')
 
-
-" YAML
+" yaml
 call SetHi256('yamlFlowIndicator', '169', 'NONE', 'NONE')
 call SetHiLink('yamlBool', 'Boolean')
 call SetHiLink('yamlDocumentStart', 'Number')
 
-" PHP
+" json
+call SetHiLink('jsonKeyword', 'String')
+call SetHiLink('jsonBraces', 'javaScriptBraces')
+call SetHiLink('jsonKeywordMatch', 'yamlKeyValueDelimiter')
+
+
+" php
 call SetHiLink('phpTodo', 'TODO')
 call SetHiLink('phpVarSelector', 'Constant')
 call SetHiLink('phpIdentifier', 'Constant')
@@ -323,6 +328,7 @@ call SetHiLink('phpInterpVarname', 'Identifier')
 call SetHiLink('phpDocTodo', 'Keyword')
 call SetHiLink('phpSpecialFunction', 'Keyword')
 call SetHiLink('phpRegionSync', 'Keyword')
+
 " ----
 " Plugin related colors
 " ----

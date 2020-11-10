@@ -163,7 +163,7 @@ autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
 autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
-autocmd FileType yaml,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml,json,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif

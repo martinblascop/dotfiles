@@ -5,7 +5,6 @@ source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/syntax_attr.vim
 
-
 call plug#begin()
 
 Plug 'alvan/vim-closetag'
@@ -107,6 +106,7 @@ nnoremap <leader>k :Rg <cword><CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>, :NERDTreeFind<CR>
+nnoremap <leader>. @:
 nnoremap <leader>; _vg_
 nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
@@ -163,7 +163,7 @@ autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
 autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
-autocmd FileType yaml,json,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml,json,markdown,terraform,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif

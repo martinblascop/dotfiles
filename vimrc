@@ -4,6 +4,7 @@ colorscheme cassie
 source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
 source ~/.vim/scripts/syntax_attr.vim
+source ~/.vim/scripts/os_type.vim
 
 call plug#begin()
 
@@ -159,8 +160,6 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-autocmd VimLeave,InsertEnter * silent execute '!echo -ne "\e[5 q"' | redraw!
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
 autocmd FileType yaml,json,markdown,terraform,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab

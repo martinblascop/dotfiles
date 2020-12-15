@@ -49,8 +49,8 @@ set wildcharm=<Tab>
 set ignorecase
 set backspace=indent,eol,start
 set tags=./tags,./.tags,tags,.tags,
-set listchars=tab:▸\ ,eol:¬
 set list
+set listchars=tab:▸\ ,eol:¬
 set ff=unix
 set mouse=a
 set hlsearch

@@ -114,7 +114,7 @@ call SetHi256('ModeMsg', '15', '235', 'NONE')
 
 call SetHi256('MoreMsg', '137', 'NONE', 'NONE')
 
-call SetHi256('NonText', '238', 'NONE', 'NONE') "end of line charater
+call SetHi256('NonText', '239', 'NONE', 'NONE') "end of line charater
 
 call SetHi256('Normal', '152', '232', 'NONE')
 
@@ -152,7 +152,7 @@ call SetHi256('SpecialChar', '137', 'NONE', 'NONE')
 
 call SetHi256('SpecialComment', '137', 'NONE', 'NONE')
 
-call SetHi256('SpecialKey', '238', 'NONE', 'NONE') "tab character
+call SetHiLink('SpecialKey', 'NonText') "tab character
 
 call SetHi256('SpellBad', '138', 'NONE', 'underline')
 

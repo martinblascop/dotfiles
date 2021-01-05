@@ -1,0 +1,1 @@
+syn region  shDoubleQuote   matchgroup=shQuote start=+"+ matchgroup=shSpecial skip=+\\"+ matchgroup=shQuote end=+"+      contained   contains=@shDblQuoteList,shStringSpecial,@Spell nextgroup=shSpecialStart

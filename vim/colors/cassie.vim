@@ -1,6 +1,12 @@
-" -------------------------------------------------------
+" ---------------------------------------------------------------
 " "Cassie" "    - A Vim color scheme
-" -------------------------------------------------------
+" ---------------------------------------------------------------
+
+" New group for nonascii characters
+" deactivated by default, to activate run :highlight nonascii
+syntax match nonascii "[^\x00-\x7F]"
+highlight nonascii guibg=Red ctermbg=2
+highlight clear nonascii
 
 " Basic init
 scriptencoding utf-8

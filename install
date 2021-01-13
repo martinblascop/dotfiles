@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+[ -f ~/.zshenv ] || ln -s $PWD/zshenv ~/.zshenv
+[ -f ~/.zshrc ] || ln -s $PWD/zshrc ~/.zshrc
+[ -d ~/.zsh ] || ln -s $PWD/zsh ~/.zsh
+
+[ -f ~/.vimrc ] || ln -s $PWD/vimrc ~/.vimrc
+[ -d ~/.vim ] || ln -s $PWD/vim ~/.vim
+
+[ -f ~/.tmux.conf ] || ln -s $PWD/tmux.conf ~/.tmux.conf
+[ -d ~/.tmux ] || ln -s $PWD/tmux ~/.tmux
+
+[ -f ~/.taskrc ] || ln -s $PWD/taskrc ~/.taskrc
+
+[ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig
+
+OSTYPE=`uname`
+
+if [[ "$OSTYPE" == "Linux" ]]; then
+	[ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
+	[ -f ~/.alacritty.yml ] || ln -s $PWD/alacritty.yml ~/.alacritty.yml
+else
+	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $PWD/alacritty.macos.yml ~/.config/alacritty/alacritty.yml
+fi
+
+echo "Done."

@@ -78,7 +78,8 @@ inoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <expr> <C-J> wildmenumode() ? "\<Down>" : "\<C-J>"
-vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>
+vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>h
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 vnoremap <leader>gg :Gbrowse<CR>
 nnoremap Q <Nop>
 nnoremap Y y$

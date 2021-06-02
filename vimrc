@@ -163,7 +163,7 @@ let g:fzf_action = {
 
 autocmd FocusGained,BufEnter * :silent! !
 autocmd FileType help wincmd L
-autocmd FileType yaml,json,markdown,terraform,html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml,json,markdown,terraform,html,css,dosini setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.conf set filetype=sh
 autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile

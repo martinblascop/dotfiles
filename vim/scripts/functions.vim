@@ -1,4 +1,4 @@
-"Change cursor shape from beam to bock
+" Change cursor shape from beam to bock
 function! CursorShape(mode)
 	if a:mode == "beam"
 		execute "silent !echo -ne '\e[5 q'"
@@ -7,7 +7,7 @@ function! CursorShape(mode)
 	endif
 endfunction
 
-"Not show quickfix buffer when switching buffers
+" Not show quickfix buffer when switching buffers
 function! BSkipQuickFix(command)
 	let start_buffer = bufnr('%')
 	execute a:command
@@ -16,9 +16,20 @@ function! BSkipQuickFix(command)
 	endwhile
 endfunction
 
-"Source file if exists
+" Source file if exists
 function! SourceIfExists(file)
 	if filereadable(expand(a:file))
 		exe 'source' a:file
+	endif
+endfunction
+
+" Toggle dash to iskeyword config
+function! ToggleDashKeyword()
+	if  match(&iskeyword, ',-') > 0
+		set iskeyword-=-
+		echo 'dash not included'
+	else
+		set iskeyword+=-
+		echo 'dash included'
 	endif
 endfunction

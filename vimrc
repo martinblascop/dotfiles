@@ -65,6 +65,7 @@ set smartcase
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set iskeyword+=-
 
 " Change leader key
 let mapleader = "\<Space>"
@@ -133,6 +134,7 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
 nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
+nnoremap <localleader>- :call ToggleDashKeyword()<CR>
 nnoremap <localleader>c :let @+=@0 <CR>:exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>
 nnoremap <localleader>l :set list!<CR>

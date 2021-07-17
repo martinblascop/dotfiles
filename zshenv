@@ -1,4 +1,5 @@
 # set environment variables
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 export LANG=en_US.UTF-8
 export ZSH=$HOME/.zsh
 export EDITOR=$(which vim)

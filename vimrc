@@ -163,13 +163,13 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-autocmd FocusGained,BufEnter * :silent! !
+autocmd BufNewFile,BufRead */.kube/config set filetype=yaml
+autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
+autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
 autocmd FileType help wincmd L
 autocmd FileType yaml,json,markdown,terraform,html,css,dosini setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.conf set filetype=sh
-autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
-autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
+autocmd FocusGained,BufEnter * :silent! !
 autocmd OptionSet diff call diff#setup()
 
 if &diff

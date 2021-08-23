@@ -13,6 +13,9 @@ source $ZSH/init.zsh
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[[ "$PATH" != *"$HOME/bin"* ]] && export PATH=$HOME/bin:$PATH
+[[ "$PATH" != *"$HOME/.local/bin"* ]] && export PATH=$HOME/.local/bin:$PATH
+
 # use beam shape cursor for each new prompt
 preexec() { echo -ne '\e[5 q'; }
 

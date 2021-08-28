@@ -19,7 +19,9 @@ function chruby_prompt_info \
   return 1
 }
 
-function virtualenv_info { [ $VIRTUAL_ENV ] && echo '('$(basename $VIRTUAL_ENV)') ' }
+function virtualenv_info {
+	[ $VIRTUAL_ENV ] && echo '('$(basename $VIRTUAL_ENV)') ' # $VIRTUAL_ENV env var is instanced when activating a virtualenv
+}
 
 
 # git theming default: Variables for theming the git info prompt
@@ -32,9 +34,9 @@ ZSH_THEME_RUBY_PROMPT_SUFFIX=")"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{25}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{160} ⚡%f"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ❗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[grey]%}"
-ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%F{64}↓%f"
+ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%F{64}↓%f" # check more colors in https://jonasjacek.github.io/colors/
 ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%F{64}↑%f"
 ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%F{64}↕%f"
 
@@ -52,7 +54,7 @@ fi
 if [[ $EUID -eq 0  ]]; then
     local SUFFIX='%F{yellow}%n%f'$(printf '%%F{yellow}\u276f%.0s%%f' {1..$LVL})
 else
-    local SUFFIX=$(printf '%%F{white}\u276f%.0s%%f' {1..$LVL})
+    local SUFFIX=$(printf '%%F{white}\u276f%.0s%%f' {1..$LVL}) # \u is for unicode character. 276f is the HEX value.
 fi
 
 

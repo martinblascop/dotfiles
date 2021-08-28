@@ -30,3 +30,15 @@
 [alias]
 	last-edited = log --pretty=format: --name-only -n 1
 	unmerged = diff --name-only --diff-filter=U
+
+[color "diff"]
+	old = red bold
+
+[color "branch"]
+	remote = yellow bold
+	current = green bold
+
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = red bold

@@ -1,1 +1,1 @@
-[[ ! -f /usr/local/bin/sed ]] && which gsed && ln -s /usr/local/bin/gsed /usr/local/bin/sed
+which gsed 2>&1 > /dev/null && alias sed=gsed

@@ -6,3 +6,7 @@ export EDITOR=$(which vim)
 export VISUAL=$EDITOR
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export FZF_CTRL_T_COMMAND='rg --hidden -l ""'
+
+# colorize pattern when searching with less
+export LESS_TERMCAP_so=$'\e[01;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\e[0m'     # reset reverse video

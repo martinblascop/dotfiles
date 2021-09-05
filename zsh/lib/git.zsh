@@ -258,10 +258,8 @@ function work_in_progress() {
   fi
 }
 
-#
-# Aliases
-# (sorted alphabetically)
-#
+
+# Aliases (sorted alphabetically)
 
 alias g='git'
 

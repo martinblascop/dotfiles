@@ -164,6 +164,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 autocmd BufNewFile,BufRead */.kube/config set filetype=yaml
+autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
 autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
 autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
 autocmd FileType help wincmd L

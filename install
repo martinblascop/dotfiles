@@ -18,12 +18,14 @@ set -e
 
 [ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig
 
+[ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
+
 OSTYPE=`uname`
 
 if [[ "$OSTYPE" == "Linux" ]]; then
-	[ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
 	[ -f ~/.alacritty.yml ] || ln -s $PWD/alacritty.yml ~/.alacritty.yml
 else
+	mkdir -p  ~/.config/alacritty 2> /dev/null
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $PWD/alacritty.macos.yml ~/.config/alacritty/alacritty.yml
 fi
 

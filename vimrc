@@ -100,7 +100,6 @@ nnoremap <C-Left> :vertical resize -5<CR>
 nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
-nnoremap <Esc>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>q :cq<CR>
 nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>h :set hlsearch!<CR>
@@ -124,10 +123,10 @@ nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
 nnoremap <leader>] <C-W>t<C-W>K
 nnoremap <leader>ge :vsp<CR>:Gedit master:%
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
@@ -135,7 +134,6 @@ nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
 nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>- :call ToggleDashKeyword()<CR>
-nnoremap <localleader>c :let @+=@0 <CR>:exec "echo 'copied to clipboard'"<CR>
 nnoremap <localleader>s :%s/\s\+$//e<CR>
 nnoremap <localleader>l :set list!<CR>
 nnoremap <localleader>t :vertical terminal<CR>

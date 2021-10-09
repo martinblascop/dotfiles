@@ -10,6 +10,7 @@ call plug#begin()
 
 Plug 'alvan/vim-closetag'
 Plug 'ap/vim-css-color'
+Plug 'bogado/file-line'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'hashivim/vim-terraform'
 Plug 'janko/vim-test'

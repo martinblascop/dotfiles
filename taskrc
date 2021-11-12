@@ -31,3 +31,4 @@ data.location=~/.task
 
 alias.rm=delete
 default.command=list
+news.version=2.6.0

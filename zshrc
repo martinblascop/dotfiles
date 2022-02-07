@@ -7,10 +7,11 @@ stty -ixon
 # disable clobbering
 set -C
 
+[ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
+
 source $ZSH/init.zsh
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-[ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ "$PATH" != *"$HOME/bin"* ]] && export PATH=$HOME/bin:$PATH

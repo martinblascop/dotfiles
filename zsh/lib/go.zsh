@@ -1,3 +1,1 @@
-if [[ "$PATH" != *"go/bin"*  ]]; then
-	export PATH=$PATH:/usr/local/go/bin
-fi
+[[ "$PATH" != *"~/go/bin"* ]] && export PATH=$PATH:~/go/bin

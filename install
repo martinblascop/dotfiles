@@ -25,7 +25,7 @@ OSTYPE=`uname`
 if [[ "$OSTYPE" == "Linux" ]]; then
 	[ -f ~/.alacritty.yml ] || ln -s $PWD/alacritty.yml ~/.alacritty.yml
 else
-	mkdir -p  ~/.config/alacritty 2> /dev/null
+	mkdir -p  ~/.config/alacritty
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $PWD/alacritty.macos.yml ~/.config/alacritty/alacritty.yml
 fi
 

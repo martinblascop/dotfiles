@@ -8,6 +8,7 @@ stty -ixon
 set -C
 
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
+[ $? = 1 ] && [ -z "$TMUX" ] && tmux new-session -s default -n home -c "cd"
 
 source $ZSH/init.zsh
 

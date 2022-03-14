@@ -14,6 +14,8 @@ set -e
 
 [ -f ~/.bashrc ] || ln -s $PWD/bashrc ~/.bashrc
 
+[ -f ~/.curlrc ] || ln -s $PWD/curlrc ~/.curlrc
+
 [ -f ~/.taskrc ] || ln -s $PWD/taskrc ~/.taskrc
 
 [ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig

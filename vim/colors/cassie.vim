@@ -132,9 +132,9 @@ call SetHi256('Operator', '61', 'NONE', 'NONE')
 
 call SetHiLink('Quote', 'String')
 
-call SetHi256('PMenu', '236', '60', 'NONE')
+call SetHi256('PMenu', 'NONE', '238', 'NONE')
 
-call SetHi256('PMenuSbar', '196', '239', 'NONE')
+call SetHi256('PMenuSbar', '200', '239', 'NONE')
 
 call SetHi256('PMenuSel', '110', '60', 'NONE')
 
@@ -150,7 +150,7 @@ call SetHiLink('Repeat', 'Statement')
 
 call SetHi256('Search', '0', '222', 'NONE')
 
-call SetHi256('SignColumn', '235', '60', 'NONE')
+call SetHi256('SignColumn', '225', 'NONE', 'NONE')
 
 call SetHi256('Special', '137', 'NONE', 'NONE')
 

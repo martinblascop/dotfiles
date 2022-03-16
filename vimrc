@@ -28,9 +28,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'wincent/command-t'
-Plug 'ycm-core/YouCompleteMe'
-" Plug 'craigemery/vim-autotag'
+Plug 'junegunn/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -107,6 +106,7 @@ nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>
 nnoremap <leader>k :Rg <cword><CR>
 nnoremap <leader>f :Rg<space>
+nnoremap <leader>t :call fzf#run(fzf#wrap({'sink': 'edit', 'options': fzf_options}))<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>, :NERDTreeFind<CR>
 nnoremap <leader>. @:
@@ -115,6 +115,7 @@ nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
+nnoremap <leader>i <Plug>(coc-definition)
 nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader><bar> :vsp #<CR>
 nnoremap <leader><F4> :buffers<CR>:buffer<Space>
@@ -131,7 +132,6 @@ nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>i :YcmCompleter GoToDeclaration<CR>
 nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
 nnoremap <localleader>- :call ToggleDashKeyword()<CR>
@@ -157,10 +157,7 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:user_emmet_leader_key='<Esc>e'
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 autocmd BufNewFile,BufRead */.kube/config set filetype=yaml
 autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini

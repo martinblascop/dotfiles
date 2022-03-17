@@ -115,7 +115,6 @@ nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
-nnoremap <leader>i <Plug>(coc-definition)
 nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader><bar> :vsp #<CR>
 nnoremap <leader><F4> :buffers<CR>:buffer<Space>
@@ -129,8 +128,8 @@ nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Git blame<CR>
-nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gc :Git checkout<Space>
+nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>h :call SyntaxAttr()<CR>
@@ -142,8 +141,7 @@ nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:
 nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
 nnoremap <localleader>fe :let @f = expand("%:t")<CR>
 nnoremap <localleader>fp :let @f = expand("%:p")<CR>
-nnoremap <C-P> :CommandTBuffer<CR>
-" nnoremap <Leader>f :FZF<CR>
+nmap <leader>i <Plug>(coc-definition)
 
 " Alias
 :command! -bang W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -152,17 +150,17 @@ nnoremap <C-P> :CommandTBuffer<CR>
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
 let @p = ' '
+let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1
-" let g:ycm_use_clangd = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:user_emmet_leader_key='<Esc>e'
-let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 
+autocmd BufNewFile,BufRead,BufEnter * if FileInRepository() | cd %:h | cd `git rev-parse --show-toplevel` | endif
+autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
 autocmd BufNewFile,BufRead */.kube/config set filetype=yaml
 autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
 autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
-autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
 autocmd FileType help wincmd L
 autocmd FileType yaml,json,markdown,terraform,html,css,dosini,dockerfile setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4

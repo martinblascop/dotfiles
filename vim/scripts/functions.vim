@@ -33,3 +33,11 @@ function! ToggleDashKeyword()
 		echo 'dash included'
 	endif
 endfunction
+
+function! FileInRepository()
+	if &filetype == '' || &filetype == 'fugitive'
+		return 0 " false
+	endif
+	let is_git_repository = system("git rev-parse --show-toplevel")
+	return v:shell_error == 0
+endfunction

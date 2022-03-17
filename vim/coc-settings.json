@@ -5,5 +5,11 @@
       "filetypes": ["terraform"],
       "initializationOptions": {}
     }
-  }
+  },
+  "pyright.disableDiagnostics": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "pyright.completion.importSupport": false,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "python.pythonPath": "~/eventbrite/pysoa"
 }

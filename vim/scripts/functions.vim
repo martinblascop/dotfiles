@@ -35,7 +35,8 @@ function! ToggleDashKeyword()
 endfunction
 
 function! FileInRepository()
-	if &filetype == '' || &filetype == 'fugitive'
+	let avoid_filetypes = ["","fugitive", "gitcommit"]
+	if index(avoid_filetypes, &filetype) >= 0
 		return 0 " false
 	endif
 	let is_git_repository = system("git rev-parse --show-toplevel")

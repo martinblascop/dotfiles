@@ -25,7 +25,3 @@ bindkey '^x^j' edit-command-line
 bindkey '^x^u' undo
 bindkey '^[y' _copy-region-as-kill
 
-alias vimrc='vim ~/.vimrc'
-alias zshrc='vim ~/.zshrc'
-alias tmuxrc='vim ~/.tmux.conf'
-alias rg='rg --colors match:fg:24'

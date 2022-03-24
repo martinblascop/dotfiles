@@ -35,7 +35,10 @@ function! ToggleDashKeyword()
 endfunction
 
 function! FileInRepository()
-	let avoid_filetypes = ["","fugitive", "gitcommit"]
+	if &readonly
+		return 0 " false
+	endif
+	let avoid_filetypes = ["","help","qf","fugitive", "git","gitcommit"]
 	if index(avoid_filetypes, &filetype) >= 0
 		return 0 " false
 	endif

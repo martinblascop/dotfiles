@@ -76,6 +76,8 @@ inoremap <C-A> <Home>
 inoremap <C-E> <End>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <expr> <C-J> wildmenumode() ? "\<Down>" : "\<C-J>"
@@ -124,7 +126,7 @@ nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
 nnoremap <leader>] <C-W>t<C-W>K
 nnoremap <leader>ge :vsp<CR>:Gedit master:%
-nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gs :vertical Git<CR>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Git blame<CR>

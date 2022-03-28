@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -108,7 +109,7 @@ nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>
 nnoremap <leader>k :Rg <cword><CR>
 nnoremap <leader>f :Rg<space>
-nnoremap <leader>t :call fzf#run(fzf#wrap({'sink': 'edit', 'options': fzf_options}))<CR>
+nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source,'sink': 'edit', 'options': fzf_options}))<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>, :NERDTreeFind<CR>
 nnoremap <leader>. @:
@@ -118,9 +119,6 @@ nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
 nnoremap <leader>m :source $MYVIMRC<CR>
-nnoremap <leader><bar> :vsp #<CR>
-nnoremap <leader><F4> :buffers<CR>:buffer<Space>
-nnoremap <leader>l q:
 nnoremap <leader>- :sp <CR>
 nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
@@ -153,6 +151,7 @@ nmap <leader>i <Plug>(coc-definition)
 
 let @p = ' '
 let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
+let fzf_source='fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f'
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'

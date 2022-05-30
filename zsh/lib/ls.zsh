@@ -5,7 +5,7 @@ function ls-style {
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 }
 
-[[ "$OSTYPE" == "Linux" ]] && ls-style && exit 0
+[[ "$OSTYPE" == "Linux" ]] && ls-style && return 0
 
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin/ ]] ; then
 	[[ "$PATH" != *"libexec/gnubin"* ]] && export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH

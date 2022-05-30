@@ -103,7 +103,6 @@ nnoremap <C-Left> :vertical resize -5<CR>
 nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
-nnoremap <leader>q :cq<CR>
 nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>

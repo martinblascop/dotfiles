@@ -38,7 +38,7 @@ function! FileInRepository()
 	if &readonly
 		return 0 " false
 	endif
-	let avoid_filetypes = ["","help","qf","fugitive", "git","gitcommit"]
+	let avoid_filetypes = ["","help","qf","fugitive", "fugitiveblame", "git","gitcommit"]
 	if index(avoid_filetypes, &filetype) >= 0
 		return 0 " false
 	endif

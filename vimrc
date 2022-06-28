@@ -31,6 +31,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jeetsukumaran/vim-indentwise'
 
 call plug#end()
 

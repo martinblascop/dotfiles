@@ -176,7 +176,7 @@ call SetHi256('StatusLine', '191', '236', 'NONE')
 
 call SetHi256('StatusLineNC', '237', '237', 'NONE')
 
-call SetHi256('StorageClass', '60', 'NONE', 'NONE')
+call SetHi256('StorageClass', '74', 'NONE', 'NONE')
 
 call SetHi256('String', '29', 'NONE', 'NONE')
 
@@ -280,6 +280,9 @@ call SetHiLink('yamlDocumentStart', 'Number')
 call SetHiLink('jsonKeyword', 'String')
 call SetHiLink('jsonBraces', 'javaScriptBraces')
 call SetHiLink('jsonKeywordMatch', 'yamlKeyValueDelimiter')
+
+" css
+call SetHiLink('cssTagName', 'Normal')
 
 
 " php

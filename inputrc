@@ -1,0 +1,2 @@
+# from bash >= 4.4 avoid pasting new line when copying command
+set enable-bracketed-paste on

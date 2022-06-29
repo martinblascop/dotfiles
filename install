@@ -18,6 +18,8 @@ set -e
 
 [ -f ~/.taskrc ] || ln -s $PWD/taskrc ~/.taskrc
 
+[ -f ~/.inputrc ] || ln -s $PWD/inputrc ~/.inputrc
+
 [ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig
 
 [ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors

@@ -17,3 +17,10 @@ _copy-region-as-kill () {
 }
 
 zle -N _copy-region-as-kill
+
+# overwrite zsh bracketed-paste to remove newline character
+bracketed-paste() {
+  zle .$WIDGET && LBUFFER=${LBUFFER%$'\n'}
+}
+
+zle -N bracketed-paste

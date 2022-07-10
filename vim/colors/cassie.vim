@@ -128,7 +128,7 @@ call SetHi256('Null', 'NONE', 'NONE', 'NONE')
 
 call SetHi256('Number', '131', 'NONE', 'NONE')
 
-call SetHi256('Operator', '61', 'NONE', 'NONE')
+call SetHi256('Operator', '68', 'NONE', 'NONE')
 
 call SetHiLink('Quote', 'String')
 
@@ -170,7 +170,7 @@ call SetHiLink('SpellRare', 'SpellBad')
 
 call SetHiLink('SpellRare', 'SpellBad')
 
-call SetHi256('Statement', '98', 'NONE', 'NONE')
+call SetHi256('Statement', '99', 'NONE', 'NONE')
 
 call SetHi256('StatusLine', '191', '236', 'NONE')
 

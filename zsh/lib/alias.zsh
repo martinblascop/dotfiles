@@ -1,7 +1,7 @@
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias tmuxrc='vim ~/.tmux.conf'
-alias rg='rg --colors match:fg:24'
+alias rg='rg --colors match:fg:39 --colors path:fg:36 --colors line:fg:15'
 
 alias vimall='vim *'
 alias dco='docker-compose'

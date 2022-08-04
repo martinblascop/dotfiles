@@ -170,6 +170,7 @@ augroup sampleconfig
 	autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 	autocmd FocusGained,BufEnter * :silent! !
 	autocmd OptionSet diff call diff#setup()
+	autocmd BufWritePre * :silent !mkdir -p %:p:h
 augroup end
 
 if &diff

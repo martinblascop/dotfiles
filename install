@@ -12,6 +12,9 @@ set -e
 [ -f ~/.tmux.conf ] || ln -s $PWD/tmux.conf ~/.tmux.conf
 [ -d ~/.tmux ] || ln -s $PWD/tmux ~/.tmux
 
+[ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig
+[ -f ~/.gitignore ] || ln -s $PWD/gitignore ~/.gitignore
+
 [ -f ~/.bashrc ] || ln -s $PWD/bashrc ~/.bashrc
 
 [ -f ~/.curlrc ] || ln -s $PWD/curlrc ~/.curlrc
@@ -19,8 +22,6 @@ set -e
 [ -f ~/.taskrc ] || ln -s $PWD/taskrc ~/.taskrc
 
 [ -f ~/.inputrc ] || ln -s $PWD/inputrc ~/.inputrc
-
-[ -f ~/.gitconfig ] || ln -s $PWD/gitconfig ~/.gitconfig
 
 [ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
 

@@ -1,47 +1,49 @@
 [user]
-	# name =
-	# email =
-	# These values are set in ~/.gitconfig.local
+  # name =
+  # email =
+  # These values are set in ~/.gitconfig.local
 
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
-	pager = LESS_TERMCAP_so= LESS_TERMCAP_se= less -x1,5 # unset custom less colors
+  editor = vim
+  excludesfile = ~/.gitignore
+  pager = LESS_TERMCAP_so= LESS_TERMCAP_se= less -x1,5 # unset custom less colors
 
 [pull]
-	rebase = true
+  rebase = true
 
 [rebase]
-	autosquash = true
+  autosquash = true
 
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 
 [difftool]
-	prompt = false
+  prompt = false
 
 [log]
-	decorate = auto
+  decorate = auto
 
 [alias]
-	last-edited = log --pretty=format: --name-only -n 1
-	unmerged = diff --name-only --diff-filter=U
+  last-edited = log --pretty=format: --name-only -n 1
+  unmerged = diff --name-only --diff-filter=U
 
 [color "diff"]
-	old = red bold
+  old = red bold
 
 [color "branch"]
-	remote = yellow bold
-	current = green bold
+  remote = yellow bold
+  current = green bold
 
 [color "status"]
-	added = green bold
-	changed = red bold
-	untracked = red bold
+  added = green bold
+  changed = red bold
+  untracked = red bold
 
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 
+[pager]
+  config = false

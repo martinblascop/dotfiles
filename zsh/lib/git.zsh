@@ -298,7 +298,6 @@ alias gcf='git config --list'
 alias gcl='git clone --recurse-submodules'
 alias gclean='git clean -id'
 alias gpristine='git reset --hard && git clean -dfx'
-alias gcm='git checkout master'
 alias gcd='git checkout develop'
 alias gcmsg='git commit -m'
 alias gco='git checkout'
@@ -421,3 +420,7 @@ alias gupav='git pull --rebase --autostash -v'
 alias glum='git pull upstream master'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
+
+function gcm (){
+     git checkout main 2> /dev/null || git checkout master
+}

@@ -47,3 +47,4 @@
 
 [pager]
   config = false
+  branch = false

@@ -7,8 +7,9 @@ function ls-style {
 
 [[ "$OSTYPE" == "Linux" ]] && ls-style && return 0
 
-if [[ -d /usr/local/opt/coreutils/libexec/gnubin/ ]] ; then
-	[[ "$PATH" != *"libexec/gnubin"* ]] && export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+BREW_PREFIX=`brew --prefix coreutils`
+if [[ -d $BREW_PREFIX/libexec/gnubin/ ]] ; then
+	[[ "$PATH" != *"libexec/gnubin"* ]] && export PATH=$BREW_PREFIX/libexec/gnubin:$PATH
 	export QUOTING_STYLE=literal
 	ls-style
 else

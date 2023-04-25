@@ -86,7 +86,7 @@ cnoremap <expr> <C-J> wildmenumode() ? "\<Down>" : "\<C-J>"
 vnoremap $ $h
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>h
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-vnoremap <leader>gg :Gbrowse<CR>
+vnoremap <leader>gg :GBrowse<CR>
 nnoremap Q <Nop>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>

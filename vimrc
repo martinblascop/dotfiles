@@ -32,6 +32,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jeetsukumaran/vim-indentwise'
+Plug 'inkarkat/vim-visualrepeat'
 
 call plug#end()
 

@@ -424,3 +424,7 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 function gcm (){
      git checkout main 2> /dev/null || git checkout master
 }
+
+function gcof (){
+     git checkout `(git branch | fzf | tr -d '[:space:]')`
+}

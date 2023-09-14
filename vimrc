@@ -117,6 +117,7 @@ nnoremap <leader>, :NERDTreeFind<CR>
 nnoremap <leader>. @:
 nnoremap <leader>; _vg_
 nnoremap <leader>o :only<CR>
+nnoremap <leader>b i<CR><ESC>
 nnoremap <leader>p "ppp
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>

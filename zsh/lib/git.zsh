@@ -42,10 +42,13 @@ function get_repository_status () {
 # Outputs current branch info in prompt format
 function git_prompt_info() {
   local ref
+  local tag
+  local git_tag_cmd='command git describe --tags --exact-match 2> /dev/null'
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
+    tag=$(eval ${git_tag_cmd/2/&} && printf ' %s' `eval $git_tag_cmd`)
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-    echo "${ZSH_THEME_GIT_PROMPT_PREFIX}on ${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "${ZSH_THEME_GIT_PROMPT_PREFIX}on ${ref#refs/heads/}${tag}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
 

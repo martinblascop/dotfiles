@@ -9,3 +9,4 @@ alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpi
 alias mk='make'
 alias tf='terraform'
 which kubectl > /dev/null && alias k='kubectl'
+which mysqlsh > /dev/null && alias mysql='mysqlsh'

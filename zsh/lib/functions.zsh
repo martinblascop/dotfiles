@@ -28,3 +28,7 @@ function env_default() {
 function t {
 	tmux "$@"
 }
+
+function path {
+	sed 's/:/\n/g' <<< $PATH
+}

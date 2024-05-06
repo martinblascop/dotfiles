@@ -31,7 +31,7 @@ set -e
 OSTYPE=`uname`
 
 if [[ "$OSTYPE" == "Linux" ]]; then
-	[ -f ~/.alacritty.yml ] || ln -s $PWD/alacritty.yml ~/.alacritty.yml
+	[ -f ~/.alacritty.toml ] || ln -s $PWD/alacritty.toml ~/.alacritty.toml
 else
 	mkdir -p  ~/.config/alacritty
 	[ -f ~/.config/alacritty/alacritty.toml ] || ln -s $PWD/alacritty.macos.toml ~/.config/alacritty/alacritty.toml

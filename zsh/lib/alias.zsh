@@ -1,5 +1,5 @@
 alias vimrc='vim ~/.vimrc'
-alias zshrc='vim ~/.zshrc'
+alias zshrc='vim ~/.zshrc ~/.zshrc.local'
 alias tmuxrc='vim ~/.tmux.conf'
 alias rg='rg --colors match:fg:39 --colors path:fg:36 --colors line:fg:15'
 

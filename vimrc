@@ -109,7 +109,7 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>r :Rg <C-R>0<CR>
-nnoremap <leader>k :Rg <cword><CR>
+nnoremap <leader>k :execute 'Rg ' ..  expand("<cword>")<CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source,'sink': 'edit', 'options': fzf_options}))<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>

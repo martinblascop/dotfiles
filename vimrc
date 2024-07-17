@@ -15,7 +15,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'hashivim/vim-terraform'
 Plug 'janko/vim-test'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jremmen/vim-ripgrep'
+" Plug 'jremmen/vim-ripgrep'
 Plug 'mattn/emmet-vim'
 Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree'
@@ -153,7 +153,7 @@ nmap <leader>i <Plug>(coc-definition)
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
 let @p = ' '
-let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
+let fzf_options='--multi --cycle --preview "bat --style=numbers --color=always --line-range :500 {}"'
 let fzf_source='fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f'
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1

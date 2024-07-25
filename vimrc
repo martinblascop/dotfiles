@@ -15,7 +15,6 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'hashivim/vim-terraform'
 Plug 'janko/vim-test'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'jremmen/vim-ripgrep'
 Plug 'mattn/emmet-vim'
 Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree'
@@ -106,44 +105,47 @@ nnoremap <C-Left> :vertical resize -5<CR>
 nnoremap <silent> <C-N> :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
-nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>r :Rg <C-R>0<CR>
-nnoremap <leader>k :execute 'Rg ' ..  expand("<cword>")<CR>
-nnoremap <leader>f :Rg<space>
-nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source,'sink': 'edit', 'options': fzf_options}))<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>, :NERDTreeFind<CR>
+nnoremap <leader>- :sp <CR>
 nnoremap <leader>. @:
 nnoremap <leader>; _vg_
-nnoremap <leader>o :only<CR>
-nnoremap <leader>b i<CR><ESC>
-nnoremap <leader>p "ppp
-nnoremap <leader>w :w<CR>
-nnoremap <leader>x :xa<CR>
-nnoremap <leader>m :source $MYVIMRC<CR>
-nnoremap <leader>- :sp <CR>
-nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>[ <C-W>t<C-W>H
+nnoremap <leader>\ :vsp <CR>
 nnoremap <leader>] <C-W>t<C-W>K
-nnoremap <leader>ge :vsp<CR>:Gedit master:%
-nnoremap <leader>gs :vertical Git<CR>
-nnoremap <leader>gf :Gfetch<CR>
-nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>b i<CR><ESC>
+nnoremap <leader>c :Commits<CR>
+nnoremap <leader>d :bd<CR>
+nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>f :Rg<space>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :Git checkout<Space>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>ge :vsp<CR>:Gedit master:%
+nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gg :Gbrowse<CR>
-nnoremap <leader>d :bd<CR>
-nnoremap <localleader>e :edit ~/.vimrc<CR>
-nnoremap <localleader>h :call SyntaxAttr()<CR>
-nnoremap <localleader>- :call ToggleDashKeyword()<CR>
-nnoremap <localleader>s :%s/\s\+$//e<CR>
-nnoremap <localleader>l :set list!<CR>
-nnoremap <localleader>t :vertical terminal<CR>
+nnoremap <leader>gs :vertical Git<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>k :execute 'Rg ' ..  expand("<cword>")<CR>
+nnoremap <leader>l :silent edit  <C-R>:Git diff-tree --no-commit-id --name-only -r HEAD<CR><CR>
 nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
-nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
+nnoremap <leader>m :source $MYVIMRC<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>o :only<CR>
+nnoremap <leader>p "ppp
+nnoremap <leader>r :Rg <C-R>0<CR>
+nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source,'sink': 'edit', 'options': fzf_options}))<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>x :xa<CR>
+nnoremap <localleader>- :call ToggleDashKeyword()<CR>
+nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>fe :let @f = expand("%:t")<CR>
+nnoremap <localleader>fn :let @f = expand("%:t:r")<CR>
 nnoremap <localleader>fp :let @f = expand("%:p")<CR>
+nnoremap <localleader>h :call SyntaxAttr()<CR>
+nnoremap <localleader>l :set list!<CR>
+nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
+nnoremap <localleader>s :%s/\s\+$//e<CR>
+nnoremap <localleader>t :vertical terminal<CR>
 nmap <leader>i <Plug>(coc-definition)
 
 " Alias

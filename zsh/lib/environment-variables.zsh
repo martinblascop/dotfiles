@@ -2,6 +2,8 @@
 export BUILDKIT_PROGRESS=plain
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+# fzf
+export FZF_DEFAULT_OPTS='--multi'
 
 # aws
 export AWS_PAGER=""

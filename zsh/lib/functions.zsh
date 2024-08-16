@@ -32,3 +32,10 @@ function t {
 function path {
 	sed 's/:/\n/g' <<< $PATH
 }
+
+# example of dinamically prefilling a command for next prompt
+# target () {
+# 	_cmd=`for i in {1..$1} ; do printf "-target '' " ; done`
+# 	print -z -- "tf apply $_cmd"
+# }
+

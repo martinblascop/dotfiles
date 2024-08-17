@@ -1,2 +1,3 @@
 curl_headers.txt
 .terraform/*
+.env

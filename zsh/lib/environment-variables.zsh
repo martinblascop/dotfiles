@@ -16,4 +16,8 @@ export KREW_ROOT=~/.krew/bin
 export PATH=$PATH:$KREW_ROOT
 export KUBECTL_EXTERNAL_DIFF="colordiff -N -U 10"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 [ `uname -s` = "Darwin" ] && export PATH=$PATH:/opt/homebrew/bin

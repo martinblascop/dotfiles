@@ -126,7 +126,7 @@ nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gs :vertical Git<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>k :execute 'Rg ' ..  expand("<cword>")<CR>
-nnoremap <leader>l :call fzf#run(fzf#wrap({'source': 'git diff-tree --no-commit-id --name-only -r HEAD'}))<CR>
+nnoremap <leader>l :argadd `git diff-tree --no-commit-id --name-only -r HEAD`<CR>:bd<CR>
 nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>

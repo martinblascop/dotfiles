@@ -6,7 +6,6 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
-  hooksPath = ~/dotfiles/git/hooks
   pager = LESS_TERMCAP_so= LESS_TERMCAP_se= less -x1,5 # unset custom less colors
 
 [pull]

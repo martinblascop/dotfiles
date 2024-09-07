@@ -8,8 +8,14 @@
 [ -d $ZSH/plugins/zsh-autosuggestions ] ||
 	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
 
+[ -d $ZSH/plugins/zsh-abbrev-alias ] ||
+	git clone https://github.com/momo-lab/zsh-abbrev-alias.git $ZSH/plugins/zsh-abbrev-alias
+
 [ -f $ZSH/plugins/zsh-autopair/zsh-autopair.plugin.zsh ] &&
 	source $ZSH/plugins/zsh-autopair/zsh-autopair.plugin.zsh
 
 [ -f $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] &&
 	source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+[ -f $ZSH/plugins/zsh-abbrev-alias/abbrev-alias.plugin.zsh ] &&
+	source $ZSH/plugins/zsh-abbrev-alias/abbrev-alias.plugin.zsh

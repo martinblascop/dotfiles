@@ -12,6 +12,6 @@ fi
 mkdir -p "$ZSH_CACHE_DIR/completions"
 (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
-for config_file ($ZSH/lib/*.zsh); do
+for config_file ($ZSH/lib/repositories.zsh $ZSH/lib/*.zsh); do
     source $config_file
 done

@@ -42,7 +42,7 @@
   untracked = red bold
 
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.gitconfig.local # it should have includeIf section for local config file
 
 [pager]
   config = false

@@ -1,7 +1,6 @@
 [user]
-  # name =
-  # email =
-  # These values are set in ~/.gitconfig.local
+  email = martinblascop@gmail.com
+  name = Martin Blasco
 
 [core]
   editor = vim

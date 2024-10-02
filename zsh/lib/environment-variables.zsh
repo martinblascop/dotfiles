@@ -1,5 +1,6 @@
 # Docker
 export BUILDKIT_PROGRESS=plain
+export BUILDKIT_COLORS="run=green:warning=yellow:error=red:cancel=cyan"
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # fzf

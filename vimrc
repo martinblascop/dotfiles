@@ -122,6 +122,7 @@ nnoremap <leader>gc :Git checkout<Space>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>ge :vsp<CR>:Gedit master:%
 nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gg :Gbrowse<CR>
 nnoremap <leader>gs :vertical Git<CR>
 nnoremap <leader>h :set hlsearch!<CR>

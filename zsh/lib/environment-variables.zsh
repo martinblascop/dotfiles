@@ -21,4 +21,7 @@ export KUBECTL_EXTERNAL_DIFF="colordiff -N -U 10"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+# tofu
+export TF_CLI_ARGS_fmt="-recursive"
+
 [ `uname -s` = "Darwin" ] && export PATH=$PATH:/opt/homebrew/bin

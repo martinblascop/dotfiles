@@ -16,6 +16,7 @@ export GH_PAGER=""
 export KREW_ROOT=~/.krew/bin
 export PATH=$PATH:$KREW_ROOT
 export KUBECTL_EXTERNAL_DIFF="colordiff -N -U 10"
+export KUBE_EDITOR=$EDITOR
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

@@ -25,4 +25,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # tofu
 export TF_CLI_ARGS_fmt="-recursive"
 
+# k9s
+export K9S_FEATURE_GATE_NODE_SHELL=true
+
 [ `uname -s` = "Darwin" ] && export PATH=$PATH:/opt/homebrew/bin

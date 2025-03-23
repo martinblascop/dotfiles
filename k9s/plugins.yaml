@@ -1,0 +1,43 @@
+plugins:
+  helm-default-values:
+    shortCut: Shift-V
+    confirm: false
+    description: Chart Default Values
+    scopes:
+      - helmreleases
+    command: sh
+    background: false
+    args:
+      - -c
+      - >-
+        revision=$(helm history -n $NAMESPACE --kube-context $CONTEXT $COL-NAME | grep deployed | awk '{ printf  $1 }');
+        kubectl get secrets --context $CONTEXT -n $NAMESPACE sh.helm.release.v1.$COL-NAME.v$revision -o yaml
+        | yq e '.data.release' -
+        | base64 -d
+        | base64 -d
+        | gunzip
+        | jq -r '.chart.values'
+        | yq -P
+        | less -K
+  get-all-namespace: # get all resources in a namespace using the krew get-all plugin
+    shortCut: g
+    confirm: false
+    description: get-all
+    scopes:
+      - namespaces
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl get-all --context $CONTEXT -n $NAME | less -K"
+  get-all-other:
+    shortCut: g
+    confirm: false
+    description: get-all
+    scopes:
+      - all
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl get-all --context $CONTEXT -n $NAMESPACE | less -K"

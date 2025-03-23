@@ -18,7 +18,7 @@ plugins:
         | gunzip
         | jq -r '.chart.values'
         | yq -P
-        | less -K
+        | vim - +'set filetype=yaml'
   get-all-namespace: # get all resources in a namespace using the krew get-all plugin
     shortCut: g
     confirm: false

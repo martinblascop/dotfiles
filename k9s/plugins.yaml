@@ -19,6 +19,20 @@ plugins:
         | jq -r '.chart.values'
         | yq -P
         | vim - +'set filetype=yaml'
+  certificate-request:
+    shortCut: Shift-C
+    confirm: false
+    description: View CertificateRequest
+    scopes:
+      - certificaterequests
+    command: sh
+    background: false
+    args:
+      - -c
+      - >-
+        kubectl get certificaterequest/$COL-NAME --context $CONTEXT -n $NAMESPACE -o template='{{.status.certificate | base64decode}}'
+        | openssl x509 -text
+        | less -K
   get-all-namespace: # get all resources in a namespace using the krew get-all plugin
     shortCut: g
     confirm: false

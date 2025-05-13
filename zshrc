@@ -26,3 +26,5 @@ bindkey '^x^u' undo
 bindkey '^[y' _copy-region-as-kill
 
 alias history='history -n 0' # do not show line numbers. More in `man zshbuiltins`
+
+source "${HOME}/.fzf/shell/key-bindings.zsh"

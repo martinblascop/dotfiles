@@ -2,6 +2,7 @@
 
 function fail {
   printf "$1\n\033[91merror:\033[0m word '$2' was not found\r\n"
+  echo $1 | python -c 'import pyperclip ; import sys ; pyperclip.copy(sys.stdin.read())'
   exit 1
 }
 
@@ -11,4 +12,3 @@ commit_message=`head -n1 $1`
 for word in `sed -E 's/([0-9]+)|(:|\.)+//g ; s/(\/|-|,)/\ /g' <<< $commit_message` ; do
   rg $word $dict > /dev/null || fail "$commit_message" "$word"
 done
-

@@ -171,7 +171,7 @@ augroup sampleconfig
 	autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
 	autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
 	autocmd FileType help wincmd L
-	autocmd FileType sh,yaml,javascript,typescript,json,markdown,terraform,html,css,dosini,cfg,dockerfile setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+	autocmd FileType sh,zsh,yaml,javascript,typescript,json,markdown,terraform,html,css,dosini,cfg,dockerfile setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	autocmd FocusGained,BufEnter * :silent! !
 	autocmd OptionSet diff call diff#setup()
 	autocmd BufWritePre * :silent !mkdir -p %:p:h

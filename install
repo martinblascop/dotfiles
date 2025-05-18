@@ -2,6 +2,11 @@
 
 set -e
 
+# install fonts
+[ -d ~/.local/share/fonts ] || ( git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts && /tmp/fonts/install.sh )
+
+[ -d ~/.fzf/shell ] || mkdir -p ~/.fzf/shell
+
 [ -f ~/.zshenv ] || ln -s $PWD/zshenv ~/.zshenv
 [ -f ~/.zshrc ] || ln -s $PWD/zshrc ~/.zshrc
 [ -d ~/.zsh ] || ln -s $PWD/zsh ~/.zsh

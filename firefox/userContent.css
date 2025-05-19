@@ -1,0 +1,20 @@
+@-moz-document domain(gitlab.com) {
+  .system-note .system-note-message .gfm-project_member {
+    color: #ff6c00 !important;
+  }
+  .gfm-project_member {
+    background-color: transparent !important;
+  }
+  .gfm-project_member.gfm-project_member, .md a.gfm-project_member {
+    color: #ff6c00 !important;
+  }
+  .description .md [dir="auto"] {
+    font-size: 1rem !important;
+  }
+  .timeline-discussion-body .md [dir="auto"] {
+    font-size: 0.9rem !important;
+  }
+  .gl-badge.badge-muted {
+    background-color: #52b87a !important;
+  }
+}

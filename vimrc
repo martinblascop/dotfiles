@@ -167,7 +167,7 @@ augroup sampleconfig
 	autocmd!
 	autocmd BufNewFile,BufRead,BufEnter * if FileInRepository() | cd %:h | cd `git rev-parse --show-toplevel` | endif
 	autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
-	autocmd BufNewFile,BufRead */*kube* set filetype=yaml
+	autocmd BufNewFile,BufRead */*kube/config set filetype=yaml
 	autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
 	autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
 	autocmd FileType help wincmd L

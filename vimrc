@@ -64,9 +64,10 @@ set autoread
 set splitright
 set incsearch
 set smartcase
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 set iskeyword+=-
 
 " Change leader key
@@ -165,21 +166,19 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:user_emmet_leader_key='<Esc>e'
 
 augroup sampleconfig
-	autocmd!
-	autocmd BufNewFile,BufRead,BufEnter * if FileInRepository() | cd %:h | cd `git rev-parse --show-toplevel` | endif
-	autocmd BufNewFile,BufRead * if &filetype == '' | set tabstop=4 softtabstop=4 shiftwidth=4 | endif
-	autocmd BufNewFile,BufRead */*kube/config set filetype=yaml
-	autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
-	autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
-	autocmd FileType help wincmd L
-	autocmd FileType sh,zsh,yaml,javascript,typescript,json,markdown,terraform,html,css,dosini,cfg,dockerfile setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-	autocmd FocusGained,BufEnter * :silent! !
-	autocmd OptionSet diff call diff#setup()
-	autocmd BufWritePre * :silent !mkdir -p %:p:h
+  autocmd!
+  autocmd BufNewFile,BufRead,BufEnter * if FileInRepository() | cd %:h | cd `git rev-parse --show-toplevel` | endif
+  autocmd BufNewFile,BufRead */*kube/config set filetype=yaml
+  autocmd BufNewFile,BufRead */*gitconfig* set filetype=dosini
+  autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
+  autocmd FileType help wincmd L
+  autocmd FocusGained,BufEnter * :silent! !
+  autocmd OptionSet diff call diff#setup()
+  autocmd BufWritePre * :silent !mkdir -p %:p:h
 augroup end
 
 if &diff
-	autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
+  autocmd VimEnter * bufdo if &diff | call diff#setup() | endif
 endif
 
 call SourceIfExists('~/.vimrc.local')

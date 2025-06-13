@@ -1,3 +1,4 @@
+/* set toolkit.legacyUserProfileCustomizations.stylesheets to "true" */
 @-moz-document domain(gitlab.com) {
   .system-note .system-note-message .gfm-project_member {
     color: #ff6c00 !important;

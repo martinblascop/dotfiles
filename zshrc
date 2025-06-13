@@ -12,8 +12,7 @@ source $ZSH/init.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[[ "$PATH" != *"$HOME/bin"* ]] && export PATH=$HOME/bin:$PATH
-[[ "$PATH" != *"$HOME/.local/bin"* ]] && export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ $? = 1 ] && [ -z "$TMUX" ] && tmux new-session -s default -n home -c "cd"

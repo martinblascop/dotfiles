@@ -26,11 +26,16 @@ function env_default() {
 }
 
 function t {
-	tmux "$@"
+    tmux "$@"
 }
 
 function path {
-	sed 's/:/\n/g' <<< $PATH
+    sed 's/:/\n/g' <<< $PATH
+}
+
+# set "ñ" character to clipboard
+function ene {
+    printf '\U0000F1' | setclip
 }
 
 # example of dinamically prefilling a command for next prompt

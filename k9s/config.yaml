@@ -1,0 +1,48 @@
+k9s:
+  apiServerTimeout: 15s
+  defaultView: ""
+  disablePodCounting: false
+  imageScans:
+    disableAutoscroll: false
+    enable: false
+    exclusions:
+      namespaces: []
+      labels: {}
+    showTime: false
+    textWrap: false
+  liveViewAutoRefresh: false
+  logger:
+    buffer: 5000
+    sinceSeconds: -1
+    tail: 100
+  maxConnRetry: 5
+  noExitOnCtrlC: false
+  portForwardAddress: localhost
+  readOnly: false
+  refreshRate: 2
+  screenDumpDir: ~/.local/state/k9s/screen-dumps
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  skipLatestRevCheck: false
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  ui:
+    crumbsless: false
+    defaultsToFullScreen: false
+    enableMouse: false
+    headless: false
+    logoless: true
+    noIcons: true
+    reactive: false
+    skin: in_the_navy
+    splashless: false
+    useFullGVRTitle: false

@@ -88,7 +88,7 @@ mods = "Control"
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
-mods = "Control|Shift"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "Copy"

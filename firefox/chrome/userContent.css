@@ -1,4 +1,8 @@
-/* set toolkit.legacyUserProfileCustomizations.stylesheets to "true" */
+/*
+set "toolkit.legacyUserProfileCustomizations.stylesheets" to "true" in about:preferences
+place this file in the root directory under the chrome directory i.e. $ROOT_DIRECTORY/chrome/userContent.css
+get the root directory in about:profiles
+*/
 @-moz-document domain(gitlab.com) {
   .system-note .system-note-message .gfm-project_member {
     color: #ff6c00 !important;

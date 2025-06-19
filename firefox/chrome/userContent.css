@@ -16,6 +16,12 @@ get the root directory in about:profiles
   .description .md [dir="auto"] {
     font-size: 1rem !important;
   }
+  .js-wiki-page-content > p {
+    font-size: 1rem !important;
+  }
+  .js-wiki-page-content > h3 {
+    font-size: 1.5rem !important;
+  }
   .timeline-discussion-body .md [dir="auto"] {
     font-size: 0.9rem !important;
   }

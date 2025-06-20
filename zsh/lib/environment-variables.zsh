@@ -4,9 +4,9 @@ export BUILDKIT_COLORS="run=green:warning=yellow:error=red:cancel=cyan"
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # fzf
-export FZF_CTRL_R_OPTS="--with-nth 2.."
+export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS --with-nth 2.."
 export FZF_CTRL_T_COMMAND='rg --hidden -l ""'
-export FZF_DEFAULT_OPTS='--multi'
+export FZF_DEFAULT_OPTS='--multi --cycle --color pointer:#ff6c00'
 
 # aws
 export AWS_PAGER=""

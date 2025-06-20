@@ -157,7 +157,7 @@ nmap <leader>i <Plug>(coc-definition)
 :command! -nargs=1 V :execute ':vertical sb' <args>
 
 let @p = ' '
-let fzf_options='--multi --cycle --preview "bat --style=numbers --color=always --line-range :500 {}"'
+let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 let fzf_source='fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let NERDTreeQuitOnOpen = 1

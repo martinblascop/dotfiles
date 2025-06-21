@@ -41,6 +41,6 @@ function ene {
 # example of dinamically prefilling a command for next prompt
 # target () {
 # 	_cmd=`for i in {1..$1} ; do printf "-target '' " ; done`
-# 	print -z -- "tf apply $_cmd"
+# 	print -z -- "tofu apply $_cmd"
 # }
 

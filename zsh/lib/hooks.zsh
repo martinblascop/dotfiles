@@ -1,5 +1,5 @@
-function dynamic_alias {
+function _dynamic_alias {
     source $ZSH/lib/alias.zsh
 }
 
-precmd_functions+=(dynamic_alias)
+precmd_functions+=(_dynamic_alias)

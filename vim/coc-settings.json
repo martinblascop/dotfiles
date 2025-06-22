@@ -8,8 +8,8 @@
     }
   },
   "coc.preferences.extensionUpdateCheck": "daily",
+  "pyright.completion.importSupport": false,
   "pyright.disableDiagnostics": true,
-  "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
-  "pyright.completion.importSupport": false
+  "python.linting.flake8Enabled": true
 }

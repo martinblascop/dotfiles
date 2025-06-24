@@ -13,9 +13,14 @@ Plug 'ap/vim-css-color'
 Plug 'bogado/file-line'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'hashivim/vim-terraform'
+Plug 'inkarkat/vim-visualrepeat'
 Plug 'janko/vim-test'
+Plug 'jeetsukumaran/vim-indentwise'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree'
 Plug 'shumphrey/fugitive-gitlab.vim'
@@ -27,11 +32,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jeetsukumaran/vim-indentwise'
-Plug 'inkarkat/vim-visualrepeat'
 
 call plug#end()
 
@@ -88,6 +88,7 @@ vnoremap $ $h
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>h
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 vnoremap <leader>gg :GBrowse<CR>
+vnoremap <leader>s :sort<CR>
 nnoremap Q <Nop>
 nnoremap Y y$
 nnoremap gm :call cursor(0, virtcol('$')/2)<CR>

@@ -29,3 +29,12 @@ get the root directory in about:profiles
     background-color: #52b87a !important;
   }
 }
+
+@-moz-document domain(cluster-api-operator.sigs.k8s.io) {
+  #content > main > p {
+    font-size: 1.5rem !important;
+  }
+  #content > main > ul > li {
+    font-size: 1.5rem !important;
+  }
+}

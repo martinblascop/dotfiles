@@ -24,3 +24,10 @@ bracketed-paste() {
 }
 
 zle -N bracketed-paste
+
+_paste-from-clipboard () {
+    CUTBUFFER=`getclip`
+    zle yank
+}
+
+zle -N _paste-from-clipboard

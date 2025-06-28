@@ -23,6 +23,7 @@ preexec() { echo -ne '\e[5 q'; }
 bindkey '^x^j' edit-command-line
 bindkey '^x^u' undo
 bindkey '^[y' _copy-region-as-kill
+bindkey '^v' _paste-from-clipboard
 
 alias history='history -n 0' # do not show line numbers. More in `man zshbuiltins`
 

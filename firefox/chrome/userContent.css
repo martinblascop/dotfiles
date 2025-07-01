@@ -16,6 +16,9 @@ get the root directory in about:profiles
   .description .md [dir="auto"] {
     font-size: 1rem !important;
   }
+  .js-work-item-description > div > p {
+    font-size: 1rem !important;
+  }
   .js-wiki-page-content > p {
     font-size: 1rem !important;
   }

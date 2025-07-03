@@ -122,7 +122,7 @@ nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :Git checkout<Space>
-nnoremap <leader>gd :vertical term ++close ++cols=<C-R>=winwidth(0)<CR> git_diff_current_tree_or_branch<CR>
+nnoremap <leader>gd :terminal ++close ++rows=<C-R>=winheight(0)<CR> git_diff_current_tree_or_branch<CR>
 nnoremap <leader>ge :vsp<CR>:Gedit master:%
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gl :vertical Git log<CR>
@@ -131,7 +131,6 @@ nnoremap <leader>gs :vertical Git<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>k :execute 'Rg ' ..  expand("<cword>")<CR>
 nnoremap <leader>l :argadd `git_diff_filenames_current_feature_branch`<CR>:bd<CR>
-nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <leader>m :source $MYVIMRC<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :only<CR>
@@ -140,6 +139,7 @@ nnoremap <leader>r :Rg <C-R>0<CR>
 nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source, 'sink': 'edit', 'options': fzf_options}))<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
+nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
 nnoremap <localleader>- :call ToggleDashKeyword()<CR>
 nnoremap <localleader>e :edit ~/.vimrc<CR>
 nnoremap <localleader>fe :let @f = expand("%:t")<CR>

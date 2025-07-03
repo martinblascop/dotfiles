@@ -122,7 +122,7 @@ nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :Git checkout<Space>
-nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gd :vertical term ++close ++cols=<C-R>=winwidth(0)<CR> git_diff_current_tree_or_branch<CR>
 nnoremap <leader>ge :vsp<CR>:Gedit master:%
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gl :vertical Git log<CR>

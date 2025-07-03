@@ -136,7 +136,8 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :only<CR>
 nnoremap <leader>p "ppp
 nnoremap <leader>r :Rg <C-R>0<CR>
-nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source, 'sink': 'edit', 'options': fzf_options}))<CR>
+nnoremap <leader>t :call fzf#run(fzf#wrap({'source': fzf_source_files, 'sink': 'edit', 'options': fzf_options}))<CR>
+nnoremap <leader>j :call fzf#run(fzf#wrap({'source': fzf_source_directories, 'sink': 'cd'}))<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :xa<CR>
 nnoremap <localleader>n :silent edit <C-R>=empty(expand('%')) ? '.' : expand('%:p:h')<CR><CR>
@@ -160,7 +161,8 @@ nmap <leader>i <Plug>(coc-definition)
 
 let @p = ' '
 let fzf_options='--preview "bat --style=numbers --color=always --line-range :500 {}"'
-let fzf_source='fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f'
+let fzf_source_directories='env -C ~/ fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type d'
+let fzf_source_files='fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let NERDTreeQuitOnOpen = 1
 let g:airline#extensions#tabline#enabled = 1

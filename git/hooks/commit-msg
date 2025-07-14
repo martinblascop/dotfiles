@@ -10,5 +10,5 @@ dict=${DICTIONARY:-/usr/share/dict/words}
 commit_message=`head -n1 $1`
 
 for word in `sed -E 's/([0-9]+)|(:|\.)+//g ; s/(\/|-|,)/\ /g' <<< $commit_message` ; do
-  rg $word $dict > /dev/null || fail "$commit_message" "$word"
+  rg --word-regexp $word $dict > /dev/null || fail "$commit_message" "$word"
 done

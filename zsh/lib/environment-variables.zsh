@@ -29,6 +29,7 @@ export NVM_DIR=~/.nvm
 
 # tofu
 export TF_CLI_ARGS_fmt="-recursive"
+export TF_CLI_ARGS_state_show="-show-sensitive"
 
 # k9s
 export K9S_FEATURE_GATE_NODE_SHELL=true

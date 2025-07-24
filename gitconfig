@@ -9,6 +9,7 @@
 
 [pull]
   rebase = true
+  tag = true
 
 [rebase]
   autosquash = true
@@ -24,6 +25,9 @@
 
 [log]
   decorate = auto
+
+[tag]
+  sort=v:refname
 
 [alias]
   last-edited = log --pretty=format: --name-only -n 1

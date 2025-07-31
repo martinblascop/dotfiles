@@ -3,6 +3,7 @@ set "toolkit.legacyUserProfileCustomizations.stylesheets" to "true" in about:pre
 place this file in the root directory under the chrome directory i.e. $ROOT_DIRECTORY/chrome/userContent.css
 get the root directory in about:profiles
 */
+
 @-moz-document domain(gitlab.com) {
   .system-note .system-note-message .gfm-project_member {
     color: #ff6c00 !important;
@@ -30,6 +31,15 @@ get the root directory in about:profiles
   }
   .gl-badge.badge-muted {
     background-color: #52b87a !important;
+  }
+  li.gl-leading-normal {
+    font-size: 0.9rem !important;
+  }
+  li.gl-leading-normal > span {
+    font-size: 0.9rem !important;
+  }
+  li.gl-leading-normal > p.gl-inline {
+    font-size: 0.9rem !important;
   }
 }
 

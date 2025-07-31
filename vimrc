@@ -119,6 +119,7 @@ nnoremap <leader>b i<CR><ESC>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>E :edit <C-R>=expand('%:p:h') . '/'<CR><C-R>=expand("<cfile>")<CR><CR>
 nnoremap <leader>f :Rg<space>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gc :Git checkout<Space>

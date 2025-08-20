@@ -34,7 +34,7 @@ plugins:
         | openssl x509 -text
         | less -K
   get-aws-ec2-node:
-    shortCut: Shift-G
+    shortCut: Shift-V
     confirm: false
     description: View AWSEC2Node
     scopes:

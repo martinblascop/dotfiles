@@ -36,7 +36,7 @@ plugins:
   get-aws-ec2-node:
     shortCut: Shift-V
     confirm: false
-    description: View AWSEC2Node
+    description: EC2-TYPE-JSON
     scopes:
       - nodes
     command: sh
@@ -48,3 +48,26 @@ plugins:
         | aws ec2 describe-instance-types --instance-types m6a.2xlarge --profile $CONTEXT
         | less -K
         | vim - +'set filetype=json'
+  view-aws-ec2-node:
+    shortCut: Shift-X
+    confirm: false
+    description: EC2-CPU-MEM
+    scopes:
+      - nodes
+    command: sh
+    background: false
+    args:
+      - -c
+      - >-
+        eks-node-viewer --context $CONTEXT --resources cpu,memory --node-sort name --disable-pricing
+  refresh-external-secrets:
+    shortCut: Shift-R
+    confirm: false
+    scopes:
+      - externalsecrets
+    description: Refresh ExternalSecret
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl annotate externalsecrets.external-secrets.io --context $CONTEXT -n $NAMESPACE $NAME force-sync=$(date +%s) --overwrite"

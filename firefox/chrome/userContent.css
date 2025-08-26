@@ -51,3 +51,9 @@ get the root directory in about:profiles
     font-size: 1.5rem !important;
   }
 }
+
+@-moz-document domain(github.com) {
+  .js-comment-body > p {
+    font-size: 1.2rem !important;
+  }
+}

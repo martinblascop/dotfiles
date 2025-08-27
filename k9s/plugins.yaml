@@ -62,7 +62,7 @@ plugins:
   list-aws-nodes:
     shortCut: Shift-L
     confirm: false
-    description: EC2-ID
+    description: NODE-ID
     scopes:
       - nodes
     command: bash
@@ -70,7 +70,7 @@ plugins:
     args:
       - -c
       - >-
-        kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,ID:.spec.providerID,NODEGROUP:"metadata.labels.eks\.amazonaws\.com/nodegroup",CAPACITY-TYPE:"metadata.labels.eks\.amazonaws\.com/capacityType"
+        cat <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,ID:.spec.providerID,NODEGROUP:"metadata.labels.eks\.amazonaws\.com/nodegroup",CAPACITY-TYPE:"metadata.labels.eks\.amazonaws\.com/capacityType") <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory)
         | less -K
   refresh-external-secrets:
     shortCut: Shift-R

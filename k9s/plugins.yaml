@@ -94,5 +94,5 @@ plugins:
     args:
       - -c
       - >-
-        kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,NODE:".metadata.annotations.volume\.kubernetes\.io/selected-node",STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode -n $NAMESPACE
+        cat <(kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode,VOLUME-NAME:.spec.volumeName -n $NAMESPACE) <( kubectl --context $CONTEXT get volumeattachment | grep -e NAME $(kubectl --context $CONTEXT get pvc -n $NAMESPACE -o=custom-columns=NAME:.spec.volumeName --no-headers | sed 's/^/-e\ /' | tr '\n' ' '))
         | less -K

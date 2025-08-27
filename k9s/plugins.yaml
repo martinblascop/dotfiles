@@ -5,7 +5,7 @@ plugins:
     description: Chart Default Values
     scopes:
       - helmreleases
-    command: sh
+    command: bash
     background: false
     args:
       - -c
@@ -25,7 +25,7 @@ plugins:
     description: View CertificateRequest
     scopes:
       - certificaterequests
-    command: sh
+    command: bash
     background: false
     args:
       - -c
@@ -39,13 +39,12 @@ plugins:
     description: EC2-TYPE-JSON
     scopes:
       - nodes
-    command: sh
+    command: bash
     background: false
     args:
       - -c
       - >-
-        kubectl get nodes/$COL-NAME --context $CONTEXT -o template='{{ index .metadata.labels "node.kubernetes.io/instance-type" }}'
-        | aws ec2 describe-instance-types --instance-types m6a.2xlarge --profile $CONTEXT
+        aws ec2 describe-instance-types --instance-types $(kubectl get nodes/$COL-NAME --context $CONTEXT -o template='{{ index .metadata.labels "node.kubernetes.io/instance-type" }}') --profile $CONTEXT
         | less -K
         | vim - +'set filetype=json'
   view-aws-ec2-node:
@@ -54,12 +53,25 @@ plugins:
     description: EC2-CPU-MEM
     scopes:
       - nodes
-    command: sh
+    command: bash
     background: false
     args:
       - -c
       - >-
-        eks-node-viewer --context $CONTEXT --resources cpu,memory --node-sort name --disable-pricing
+        eks-node-viewer --context $CONTEXT --resources cpu,memory --node-sort name --disable-pricing --extra-labels eks.amazonaws.com/nodegroup
+  list-aws-nodes:
+    shortCut: Shift-L
+    confirm: false
+    description: EC2-ID
+    scopes:
+      - nodes
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,ID:.spec.providerID,NODEGROUP:"metadata.labels.eks\.amazonaws\.com/nodegroup",CAPACITY-TYPE:"metadata.labels.eks\.amazonaws\.com/capacityType"
+        | less -K
   refresh-external-secrets:
     shortCut: Shift-R
     confirm: false
@@ -71,3 +83,16 @@ plugins:
     args:
       - -c
       - "kubectl annotate externalsecrets.external-secrets.io --context $CONTEXT -n $NAMESPACE $NAME force-sync=$(date +%s) --overwrite"
+  get-pvc:
+    shortCut: Shift-L
+    confirm: false
+    scopes:
+      - persistentvolumeclaims
+    description: PVC-NODE
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,NODE:".metadata.annotations.volume\.kubernetes\.io/selected-node",STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode -n $NAMESPACE
+        | less -K

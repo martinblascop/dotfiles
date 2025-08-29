@@ -96,3 +96,14 @@ plugins:
       - >-
         cat <(kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode,VOLUME-NAME:.spec.volumeName -n $NAMESPACE) <( kubectl --context $CONTEXT get volumeattachment | grep -e NAME $(kubectl --context $CONTEXT get pvc -n $NAMESPACE -o=custom-columns=NAME:.spec.volumeName --no-headers | sed 's/^/-e\ /' | tr '\n' ' '))
         | less -K
+  explain:
+    shortCut: Shift-1
+    confirm: false
+    scopes:
+      - all
+    description: EXPLAIN
+    command: bash
+    background: false
+    args:
+      - -c
+      - kubectl --context $CONTEXT explain $(cat <(echo -n "$RESOURCE_NAME.") $VIM_YAML_TREE_FILE_PATH) | less -K

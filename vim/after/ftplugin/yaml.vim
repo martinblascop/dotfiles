@@ -2,6 +2,7 @@ map [[ <Plug>(IndentWisePreviousLesserIndent)
 map ]] <Plug>(IndentWiseNextGreaterIndent)
 
 function! YAMLTree()
+    let filepath = $VIM_YAML_TREE_FILE_PATH
     let l:list = []
     let l:cur = getcurpos()[1]
     " Retrieve the current line indentation
@@ -19,7 +20,7 @@ function! YAMLTree()
     endfor
     let l:list = reverse(l:list)
     echo join(l:list, '.')
-    call writefile([join(l:list, '.')], "/tmp/path.yaml.vim")
+    call writefile([join(l:list, '.')], filepath)
 endfunction
 
 nnoremap <leader>1 :call YAMLTree()<CR>

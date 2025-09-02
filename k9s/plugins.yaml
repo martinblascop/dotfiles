@@ -70,7 +70,7 @@ plugins:
     args:
       - -c
       - >-
-        cat <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,ID:.spec.providerID,NODEGROUP:"metadata.labels.eks\.amazonaws\.com/nodegroup",CAPACITY-TYPE:"metadata.labels.eks\.amazonaws\.com/capacityType") <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory)
+        cat <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,ID:.spec.providerID,NODEGROUP:"metadata.labels.eks\.amazonaws\.com/nodegroup",CAPACITY-TYPE:"metadata.labels.eks\.amazonaws\.com/capacityType",TAINTS:.spec.taints) <(kubectl --context $CONTEXT get nodes -o=custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory)
         | less -K
   refresh-external-secrets:
     shortCut: Shift-R

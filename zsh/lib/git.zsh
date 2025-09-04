@@ -271,6 +271,7 @@ alias gaa='git add --all'
 alias gapa='git add --patch'
 alias gau='git add --update'
 alias gav='git add --verbose'
+alias gaf='git ls-files --modified --others --exclude-standard | fzf | xargs git add'
 alias gap='git apply'
 
 alias gb='git branch'

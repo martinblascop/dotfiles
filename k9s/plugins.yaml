@@ -20,7 +20,7 @@ plugins:
         | yq -P
         | vim - +'set filetype=yaml'
   certificate-request:
-    shortCut: Shift-C
+    shortCut: Shift-L
     confirm: false
     description: View CertificateRequest
     scopes:

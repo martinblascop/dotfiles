@@ -1,8 +1,20 @@
 plugins:
   helm-default-values:
-    shortCut: Shift-V
+    shortCut: Shift-L
     confirm: false
     description: Chart Default Values
+    scopes:
+      - helmreleases
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        temp_dir=$(mktemp -d) && env -C $temp_dir helm fetch $(kubectl --context $CONTEXT get hr/$COL-NAME -n $NAMESPACE -o template='{{.spec.chart.spec.sourceRef.name}}')/$COL-NAME --untar --version '*' && vim $temp_dir/*/values.yaml
+  helm-values:
+    shortCut: Shift-V
+    confirm: false
+    description: Chart Values
     scopes:
       - helmreleases
     command: bash

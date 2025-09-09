@@ -10,7 +10,7 @@ plugins:
     args:
       - -c
       - >-
-        temp_dir=$(mktemp -d) && env -C $temp_dir helm fetch $(kubectl --context $CONTEXT get hr/$COL-NAME -n $NAMESPACE -o template='{{.spec.chart.spec.sourceRef.name}}')/$COL-NAME --untar --version '*' && vim $temp_dir/*/values.yaml
+        temp_dir=$(mktemp -d) && env -C $temp_dir helm fetch $(kubectl --context $CONTEXT get hr/$COL-NAME -n $NAMESPACE -o template='{{.spec.chart.spec.sourceRef.name}}')/$(kubectl --context $CONTEXT get hr/$COL-NAME -n $NAMESPACE -o template='{{.spec.chart.spec.chart}}') --untar --version '*' && vim $temp_dir/*/values.yaml
   helm-values:
     shortCut: Shift-V
     confirm: false

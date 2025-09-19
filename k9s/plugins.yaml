@@ -1,4 +1,15 @@
 plugins:
+  crd-wizard:
+    shortCut: Shift-W
+    confirm: false
+    description: crd-wizard
+    scopes:
+      - all
+    command: bash
+    background: false
+    args:
+      - -c
+      - crd-wizard tui --context $CONTEXT
   helm-default-values:
     shortCut: Shift-L
     confirm: false

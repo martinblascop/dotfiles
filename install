@@ -28,6 +28,8 @@ set -e
 
 [ -f ~/.inputrc ] || ln -s $PWD/inputrc ~/.inputrc
 
+[ -f ~/.kube/kuberc ] || ln -s $PWD/kuberc ~/.kube/kuberc
+
 [ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
 
 [ -f ~/.my.cnf ] || ln -s $PWD/mysql.cnf ~/.my.cnf

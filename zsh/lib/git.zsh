@@ -431,5 +431,9 @@ function gcm (){
 }
 
 function gcof (){
-     git checkout `(git branch | fzf | tr -d '[:space:]')`
+    if git diff-index --quiet HEAD ; then
+        git checkout `(git branch | fzf --prompt "branch to checkout: " | tr -d '[:space:]')`
+    else
+        git checkout `(git --no-pager diff --name-only | fzf --prompt "file to checkout: " )`
+    fi
 }

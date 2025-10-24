@@ -88,6 +88,7 @@ cnoremap <expr> <C-J> wildmenumode() ? "\<Down>" : "\<C-J>"
 vnoremap $ $h
 vnoremap <C-C> "+y :exec "echo 'copied to clipboard'"<CR>h
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
 vnoremap <leader>gg :GBrowse<CR>
 vnoremap <leader>s :sort<CR>
 nnoremap Q <Nop>

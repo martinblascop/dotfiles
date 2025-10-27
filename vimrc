@@ -36,39 +36,39 @@ Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 " Settings
-set t_Co=256
-set t_ut=
-set history=1000
-set number
-set relativenumber
-set ttyfast
-set hidden
-set cursorline
-set wrap
-set linebreak
-set wildmenu
-set wildcharm=<Tab>
-set ignorecase
+set autoread
 set backspace=indent,eol,start
-set tags=./tags,./.tags,tags,.tags,
+set cursorline
+set expandtab
+set ff=unix
+set hidden
+set history=1000
+set hlsearch
+set ignorecase
+set incsearch
+set iskeyword+=-
+set linebreak
 set list
 set listchars=tab:▸\ ,eol:¬
-set ff=unix
-set mouse=a
-set hlsearch
-set noswapfile
-set undofile
-set undodir=~/.vim/undovim
 set modifiable
-set autoread
-set splitright
-set incsearch
-set smartcase
-set tabstop=2
+set mouse=a
+set noswapfile
+set number
+set relativenumber
 set shiftwidth=2
+set smartcase
 set softtabstop=2
-set expandtab
-set iskeyword+=-
+set splitright
+set t_Co=256
+set t_ut=
+set tabstop=2
+set tags=./tags,./.tags,tags,.tags,
+set ttyfast
+set undodir=~/.vim/undovim
+set undofile
+set wildcharm=<Tab>
+set wildmenu
+set wrap
 
 " Change leader key
 let mapleader = "\<Space>"

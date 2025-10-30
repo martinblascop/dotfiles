@@ -9,6 +9,8 @@ defaults:
     options:
       - name: server-side
         default: "true"
+      - name: force-conflicts
+        default: "true"
   - command: delete
     options:
       - name: interactive

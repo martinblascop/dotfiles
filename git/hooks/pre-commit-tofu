@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function error {
+  echo 'run `tofu fmt dude`'
+  exit 1
+}
+tofu fmt -check &> /dev/null || error

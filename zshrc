@@ -13,6 +13,7 @@ source $ZSH/init.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export XDG_CONFIG_HOME=~/.config
 
 [ -f ~/.tmux/sessions.tmux ] && source ~/.tmux/sessions.tmux
 [ $? = 1 ] && [ -z "$TMUX" ] && tmux new-session -s default -n home -c "cd"

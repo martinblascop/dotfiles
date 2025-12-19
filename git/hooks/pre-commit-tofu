@@ -5,3 +5,4 @@ function error {
   exit 1
 }
 tofu fmt -check &> /dev/null || error
+tofu validate

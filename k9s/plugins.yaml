@@ -130,3 +130,45 @@ plugins:
     args:
       - -c
       - kubectl --context $CONTEXT explain $(cat <(echo -n "$RESOURCE_NAME.") $VIM_YAML_TREE_FILE_PATH) | less -K
+  cnpg-status:
+    shortCut: Shift-S
+    description: Status
+    scopes:
+      - cluster
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl cnpg status $NAME -n $NAMESPACE --context \"$CONTEXT\" --verbose 2>&1 | less -R"
+  cnpg-psql:
+    shortCut: p
+    description: PSQL shell
+    scopes:
+      - cluster
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl cnpg psql $NAME -n $NAMESPACE --context $CONTEXT"
+  cnpg-reload:
+    shortCut: r
+    description: Reload
+    confirm: true
+    scopes:
+      - cluster
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl cnpg reload $NAME -n $NAMESPACE --context \"$CONTEXT\" 2>&1 | less -R"
+  cnpg-restart:
+    shortCut: Shift-R
+    description: Restart
+    confirm: true
+    scopes:
+      - cluster
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl cnpg restart $NAME -n $NAMESPACE --context \"$CONTEXT\" 2>&1 | less -R"

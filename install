@@ -32,6 +32,8 @@ set -e
 
 [ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
 
+[ -f ~/.psqlrc ] || ln -s $PWD/psqlrc ~/.psqlrc
+
 [ -f ~/.my.cnf ] || ln -s $PWD/mysql.cnf ~/.my.cnf
 [ -d ~/.mysqlsh ] || (mkdir -p ~/.mysqlsh && ln -s $PWD/mysql_prompt.json ~/.mysqlsh/prompt.json)
 

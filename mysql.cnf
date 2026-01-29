@@ -1,2 +1,4 @@
 [client]
-sql
+auto-vertical-output
+prompt=\\u@\\h \\d>\\_ 
+tee=/tmp/mysql

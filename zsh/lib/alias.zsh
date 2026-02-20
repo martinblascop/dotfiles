@@ -6,6 +6,7 @@ alias vimall='vim *'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc ~/.zshrc.local'
 
+which flux > /dev/null && abbrev-alias -g fl="flux --context `kubectl ctx -c`"
 which kubectl > /dev/null && abbrev-alias -g k="kubectl --context `kubectl ctx -c`"
 which mysqlsh > /dev/null && abbrev-alias -g mysql='mysqlsh'
 which tofu > /dev/null && abbrev-alias -g tf='tofu'

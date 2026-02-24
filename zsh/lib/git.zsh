@@ -437,3 +437,7 @@ function gcof (){
         git checkout `(git --no-pager diff --name-only | fzf --prompt "file to checkout: " )`
     fi
 }
+
+function gbdf (){
+    git branch -D `(git branch | fzf --prompt "branch to delete: " | tr -d '[:space:]')`
+}

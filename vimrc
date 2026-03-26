@@ -3,8 +3,9 @@ filetype on
 colorscheme cassie
 source ~/.vim/scripts/functions.vim
 source ~/.vim/scripts/matchit.vim
-source ~/.vim/scripts/syntax_attr.vim
 source ~/.vim/scripts/os_type.vim
+source ~/.vim/scripts/syntax_attr.vim
+source ~/.vim/scripts/yaml_sort.vim
 
 call plug#begin()
 

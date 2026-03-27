@@ -11,3 +11,11 @@ kubectl-pod-resources() {
         [$pod.metadata.namespace, $pod.metadata.name, .name] | @tsv
       ' | column -t --table-columns NAMESPACE,POD,CONTAINER
 }
+
+kubectl-pod-restarts() {
+    echo -e "\033[33mpods with restart\033[0m"
+    kubectl get pods $@ -o json | jq -r '
+        .items[] | select(.status.containerStatuses[]?.restartCount > 0) |
+        "\(.metadata.namespace)\t\(.metadata.name)\t\(.status.containerStatuses[].restartCount)"
+      ' | column -t --table-columns NAMESPACE,POD,RESTARTS
+}

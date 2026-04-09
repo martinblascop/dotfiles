@@ -117,7 +117,7 @@ plugins:
     args:
       - -c
       - >-
-        cat <(kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode,VOLUME-NAME:.spec.volumeName -n $NAMESPACE) <( kubectl --context $CONTEXT get volumeattachment | grep -e NAME $(kubectl --context $CONTEXT get pvc -n $NAMESPACE -o=custom-columns=NAME:.spec.volumeName --no-headers | sed 's/^/-e\ /' | tr '\n' ' '))
+        cat <(kubectl --context $CONTEXT get pvc -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,VOLUME-MODE:.spec.volumeMode,VOLUME-NAME:.spec.volumeName -n $NAMESPACE) <(kubectl --context $CONTEXT get volumeattachment | grep -e NAME $(kubectl --context $CONTEXT get pvc -n $NAMESPACE -o=custom-columns=NAME:.spec.volumeName --no-headers | sed 's/^/-e\ /' | tr '\n' ' ')) <(kubectl --context $CONTEXT get pv -o=custom-columns=NAME:.metadata.name,VOLUMEHANDLE:.spec.csi.volumeHandle | grep -e NAME $(kubectl --context $CONTEXT get pvc -n $NAMESPACE -o=custom-columns=NAME:.spec.volumeName --no-headers | sed 's/^/-e\ /' | tr '\n' ' '))
         | less -K
   explain:
     shortCut: Shift-1

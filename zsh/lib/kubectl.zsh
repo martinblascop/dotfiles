@@ -22,3 +22,71 @@ kubectl-pod-image() {
         .items[] | . as $pod | .spec.containers[] |
         [$pod.metadata.namespace, $pod.metadata.name, .name, .image] | @tsv' | column -t --table-columns NAMESPACE,POD,CONTAINER,IMAGE 
 }
+
+kubectl-owners() {
+    local json
+    json=$(kubectl get "$@" -o json) || return $?
+    # Script on fd 3; JSON still arrives on stdin (avoids heredoc end-marker indentation issues).
+    printf '%s' "$json" | python3 /dev/fd/3 3<<'PY' | column -t -s $'\t'
+import json, sys
+
+def load_obj(raw):
+    try:
+        return json.loads(raw, strict=False)
+    except TypeError:
+        return json.loads(raw)
+
+def fmt_bool(v):
+    if v is True:
+        return "true"
+    if v is False:
+        return "false"
+    if v is None:
+        return "-"
+    return str(v).lower()
+
+def add_rows(lines, ns, nm, rk, owners):
+    ns = "-" if ns in (None, "") else str(ns)
+    nm = "-" if nm in (None, "") else str(nm)
+    rk = "-" if rk in (None, "") else str(rk)
+    owners = owners or []
+    if not owners:
+        lines.append([ns, nm, rk, "-", "-", "-", "-", "-", "-"])
+        return
+    for o in owners:
+        blk = o.get("blockOwnerDeletion")
+        lines.append([
+            ns, nm, rk,
+            str(o.get("kind") or "-"),
+            str(o.get("name") or "-"),
+            str(o.get("apiVersion") or "-"),
+            fmt_bool(o.get("controller", False)),
+            fmt_bool(blk) if blk is not None else "-",
+        ])
+
+raw = sys.stdin.read()
+obj = load_obj(raw)
+lines = []
+
+if obj.get("kind") == "List":
+    items = obj.get("items") or []
+    if not items:
+        print("No resources returned.")
+        raise SystemExit(0)
+    for item in items:
+        md = item.get("metadata") or {}
+        add_rows(lines, md.get("namespace"), md.get("name"), item.get("kind"), md.get("ownerReferences"))
+else:
+    md = obj.get("metadata") or {}
+    add_rows(lines, md.get("namespace"), md.get("name"), obj.get("kind"), md.get("ownerReferences"))
+
+hdr = (
+    "NAMESPACE", "RESOURCE", "RESOURCE_KIND",
+    "OWNER_KIND", "OWNER_NAME", "OWNER_APIVERSION",
+    "CONTROLLER", "BLOCK_OWNER_DELETION",
+)
+print("\t".join(hdr))
+for row in lines:
+    print("\t".join(row))
+PY
+}

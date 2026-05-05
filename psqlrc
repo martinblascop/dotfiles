@@ -7,6 +7,7 @@
 \set roles 'select m.rolname AS role, r.rolname AS granted_roles FROM pg_auth_members JOIN pg_roles r ON r.oid = pg_auth_members.roleid JOIN pg_roles m ON m.oid = pg_auth_members.member ORDER BY role, member;'
 \set slots 'select slot_name, active from pg_replication_slots;'
 \set version 'select version();'
+\set walretained 'select slot_name, active, restart_lsn, pg_size_pretty(pg_wal_lsn_diff(pg_current_wal_lsn(), restart_lsn)) AS retained FROM pg_replication_slots;'
 
 \echo 'Welcome dude \n'
 \echo 'Type :desc $table_name to describe a table.'
@@ -14,4 +15,5 @@
 \echo 'Type :roles to see roles.'
 \echo 'Type :slots to see the available slots.'
 \echo 'Type :version to see the PostgreSQL version.'
+\echo 'Type :walretained to see wal size retained.'
 \echo 'Type \\q to exit. \n'

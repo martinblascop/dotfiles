@@ -17,6 +17,7 @@
   tool = vimdiff
 
 [diff]
+  context = 5
   tool = vimdiff
 
 [difftool]

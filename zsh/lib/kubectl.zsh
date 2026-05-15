@@ -1,3 +1,13 @@
+kubectl-node-allocatable() {
+    echo -e "\033[33mshow node allocatable resources\033[0m"
+    kubectl describe nodes $@ | awk ' /^$/ { print; next } /^[^[:space:]]/ { p = ($0 ~ /^(Name|Labels|Capacity|Allocatable|Allocated resources):/) } p '
+}
+
+kubectl-resource-metadata() {
+    echo -e "\033[33mshow resource kind and metadata\033[0m"
+    kubectl get $@ -o yaml | yq -o=json '.' | jq '.items | map({kind, metadata})' | yq -P '.'
+}
+
 kubectl-pod-resources() {
     echo -e "\033[33mpods without resources defined\033[0m"
     kubectl get pods $@ -o json | jq -r '

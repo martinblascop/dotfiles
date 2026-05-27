@@ -44,3 +44,32 @@ function ene {
 # 	print -z -- "tofu apply $_cmd"
 # }
 
+# Print whitespace-aligned tabular output vertically, MySQL "\G" style.
+# Column headers and values must be single tokens (no embedded spaces) --
+# true for most kubectl/ps output. Stray title/footer lines whose field
+# count differs from the table body are ignored automatically.
+#
+# Usage:
+#    kubectl get pods   | vtable
+#    list-pods-with-title | vtable     # leading colored title is dropped
+#
+function vtable {
+    awk '
+        { gsub(/\033\[[0-9;]*m/, ""); buf[NR] = $0; if (NF > 0) cnt[NF]++ }
+        END {
+            # table width = the most common field count (ignores title lines)
+            for (k in cnt) if (cnt[k] > best) { best = cnt[k]; W = k }
+            for (i = 1; i <= NR; i++) {
+                $0 = buf[i]
+                if (NF != W) continue
+                if (!hdr) {
+                    for (j = 1; j <= W; j++) { h[j] = $j; if (length($j) > w) w = length($j) }
+                    hdr = 1; continue
+                }
+                printf "*************************** %d ***************************\n", ++r
+                for (j = 1; j <= W; j++) printf "%*s: %s\n", w, h[j], $j
+            }
+        }
+    '
+}
+

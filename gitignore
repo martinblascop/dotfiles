@@ -1,3 +1,4 @@
-curl_headers.txt
-.terraform/*
 .env*
+.terraform/*
+.terragrunt*
+curl_headers.txt

@@ -73,3 +73,10 @@ function vtable {
     '
 }
 
+function yamlkeys {
+  if [[ -z "$1" || ! -f "$1" ]]; then
+    echo "Usage: yamlkeys <file.yaml>" >&2
+    return 1
+  fi
+  yq eval 'keys | .[]' "$1"
+}

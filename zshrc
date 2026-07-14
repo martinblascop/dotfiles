@@ -29,3 +29,4 @@ bindkey '^v' _paste-from-clipboard
 alias history='history -n 0' # do not show line numbers. More in `man zshbuiltins`
 
 source "${HOME}/.fzf/shell/key-bindings.zsh"
+source ./.env 2> /dev/null

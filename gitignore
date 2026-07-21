@@ -2,3 +2,5 @@
 .terraform/*
 .terragrunt*
 curl_headers.txt
+
+**/.claude/settings.local.json

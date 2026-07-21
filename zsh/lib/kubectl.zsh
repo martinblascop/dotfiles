@@ -28,7 +28,7 @@ kubectl-pod-restarts() {
 
 kubectl-pod-image() {
     echo -e "\033[33mlist pods tag version\033[0m"
-    kubectl --context sandbox get pods $@ -o json | jq -r '
+    kubectl get pods $@ -o json | jq -r '
         .items[] | . as $pod | .spec.containers[] |
         [$pod.metadata.namespace, $pod.metadata.name, .name, .image, $pod.status.startTime] | @tsv' | column -t --table-columns NAMESPACE,POD,CONTAINER,IMAGE,START
 }

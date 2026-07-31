@@ -22,9 +22,15 @@ if [[ "$CASE_SENSITIVE" = true ]]; then
   zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 else
   if [[ "$HYPHEN_INSENSITIVE" = true ]]; then
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+    zstyle ':completion:*' matcher-list 'm:{a-z-}={A-Z_}' 'm:{A-Z_}={a-z-}' 'r:|=*' 'l:|=* r:|=*'
   else
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+    # NOTE: intentionally split into two one-directional folds instead of a single
+    # bidirectional 'm:{a-zA-Z}={A-Za-z}' matcher. The combined bidirectional form
+    # causes zsh to insert a tentative, case-marked guess on the first Tab for any
+    # ambiguous prefix (e.g. "qa-" -> "qa-B" for qa-alpha/qa-beta), needing a second
+    # Tab to confirm. Splitting into two directional matchers gives the same
+    # case-insensitive matching without that guess-and-confirm behavior.
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{A-Z}={a-z}' 'r:|=*' 'l:|=* r:|=*'
   fi
 fi
 unset CASE_SENSITIVE HYPHEN_INSENSITIVE

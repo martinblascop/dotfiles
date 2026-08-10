@@ -80,3 +80,12 @@ function yamlkeys {
   fi
   yq eval 'keys | .[]' "$1"
 }
+
+function argodiff {
+    git show origin/main:$2 | yq '.spec.source.helm.valuesObject' >! /tmp/values-base.yaml
+    yq '.spec.source.helm.valuesObject' $2 >! /tmp/values-target.yaml
+    for v in base target; do
+      helm template `yq .spec.source.helm.releaseName $2` $1 -n `yq .metadata.namespace $2` -f /tmp/values-$v.yaml >! /tmp/$v.yaml
+    done
+    dyff between /tmp/base.yaml /tmp/target.yaml --omit-header
+}

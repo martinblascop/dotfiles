@@ -4,3 +4,4 @@
 curl_headers.txt
 
 **/.claude/settings.local.json
+__pycache__/*

@@ -30,3 +30,4 @@ alias history='history -n 0' # do not show line numbers. More in `man zshbuiltin
 
 source "${HOME}/.fzf/shell/key-bindings.zsh"
 source ./.env 2> /dev/null
+export PATH="/opt/homebrew/sbin:$PATH"

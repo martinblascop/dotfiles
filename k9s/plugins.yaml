@@ -172,3 +172,18 @@ plugins:
     args:
       - -c
       - "kubectl cnpg restart $NAME -n $NAMESPACE --context \"$CONTEXT\" 2>&1 | less -R"
+  edit-secret:
+    shortCut: Ctrl-X
+    confirm: false
+    description: "Edit Decoded Secret"
+    scopes:
+      - secrets
+    command: kubectl
+    background: false
+    args:
+      - modify-secret
+      - --namespace
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME

@@ -45,3 +45,20 @@ function! FileInRepository()
 	let is_git_repository = system("git rev-parse --show-toplevel")
 	return v:shell_error == 0
 endfunction
+
+" Directory fzf searches from: the git repository containing the working
+" directory, or the working directory itself when outside a repository.
+" Resolved on every call so it follows :cd rather than being fixed at startup.
+function! FzfRoot()
+	let root = trim(system("git rev-parse --show-toplevel"))
+	return v:shell_error == 0 ? root : getcwd()
+endfunction
+
+" Fuzzy-find files under FzfRoot() and edit the selection.
+function! FzfFiles()
+	let root = FzfRoot()
+	let source = 'fd --strip-cwd-prefix --hidden --follow --exclude ".git" --type f --base-directory=' . shellescape(root)
+	let options = '--preview "bat --style=numbers --color=always --line-range :500 ' . root . '/{}"'
+	let Sink = {file -> execute('edit ' . fnameescape(root . '/' . file))}
+	call fzf#run(fzf#wrap({'source': source, 'sink': Sink, 'options': options}))
+endfunction

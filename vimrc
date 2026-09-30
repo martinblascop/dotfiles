@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 syntax on
 filetype on
 colorscheme cassie

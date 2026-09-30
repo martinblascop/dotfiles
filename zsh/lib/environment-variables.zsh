@@ -16,7 +16,7 @@ export GH_PAGER=""
 
 # kubectl krew plugin
 export KREW_ROOT=~/.krew/bin
-export PATH=$PATH:$KREW_ROOT
+export PATH=$PATH:$KREW_ROOT/bin
 export KUBECTL_EXTERNAL_DIFF="colordiff -N -U 10"
 export KUBECTL_KUBERC=true
 export KUBE_EDITOR=$EDITOR

@@ -12,6 +12,8 @@ fi
 mkdir -p "$ZSH_CACHE_DIR/completions"
 (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
-for config_file ($ZSH/lib/repositories.zsh $ZSH/lib/*.zsh); do
+# environment-variables.zsh goes early so PATH (e.g. krew plugins) is set before alias.zsh runs `kubectl ctx`
+config_files=($ZSH/lib/repositories.zsh $ZSH/lib/environment-variables.zsh $ZSH/lib/*.zsh)
+for config_file (${(u)config_files}); do
     source $config_file
 done

@@ -47,7 +47,8 @@ if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}"  end-of-line            # [End] - Go to end of line
 fi
 
-bindkey ' ' magic-space                               # [Space] - do history expansion
+# bindkey ' ' magic-space                               # [Space] - do history expansion  (overridden by zsh-abbrev-alias)
+abbrev-alias --init                                   # [Space]/[Enter] - expand abbrev-aliases (must come after bindkey -e)
 
 bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word

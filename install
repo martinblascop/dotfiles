@@ -24,7 +24,9 @@ set -e
 
 [ -f ~/.curlrc ] || ln -s $PWD/curlrc ~/.curlrc
 
-[ -f ~/.taskrc ] || ln -s $PWD/taskrc ~/.taskrc
+[ -f ~/.tofurc ] || (mkdir -p ~/.terraform.d/plugin-cache/ && ln -s $PWD/tofurc ~/.tofurc)
+
+[ -f ~/.dir_colors ] || ln -s $PWD/dir_colors ~/.dir_colors
 
 [ -f ~/.inputrc ] || ln -s $PWD/inputrc ~/.inputrc
 

@@ -2,7 +2,8 @@
 
 set -e
 
-# install fonts
+[ -d ~/bin ] || cp git/git_diff_* ~/bin
+
 [ -d ~/.local/share/fonts ] || ( git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts && /tmp/fonts/install.sh )
 
 [ -d ~/.fzf/shell ] || mkdir -p ~/.fzf/shell
